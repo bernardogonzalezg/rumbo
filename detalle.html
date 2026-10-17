@@ -76,124 +76,73 @@
       </div>
     </header>
 
-    <main class="detalle">
+    <main class="detalle" id="detalle">
       <section class="contenedor detalle__contenido">
-        <div class="detalle__titulo">
-          <div>
-            <nav class="migas" aria-label="Ruta de navegación">
-              <ol>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="explorar.html">Explorar</a></li>
-                <li><a href="explorar.html?destino=Tandil">Tandil</a></li>
-              </ol>
-            </nav>
-            <h1>City tour por Tandil</h1>
-            <p class="detalle__ubicacion">
-              Tandil, Buenos Aires ·
-              <span data-icono="estrella"></span> 4,2 (124 reseñas)
-            </p>
+        <div class="detalle__encabezado">
+          <nav class="migas" aria-label="Ruta de navegación">
+            <ol>
+              <li><a href="index.html">Inicio</a></li>
+              <li><a href="explorar.html">Explorar</a></li>
+              <li><a href="explorar.html" id="miga-lugar"></a></li>
+            </ol>
+          </nav>
+
+          <div class="detalle__titulo">
+            <h1 id="titulo"></h1>
+            <button
+              class="detalle__favorito"
+              id="favorito"
+              type="button"
+              aria-pressed="false"
+              data-icono="corazon"
+            ></button>
           </div>
 
-          <button
-            class="detalle__favorito"
-            type="button"
-            data-id="6"
-            aria-pressed="false"
-            aria-label="Guardar City tour por Tandil en favoritos"
-            data-icono="corazon"
-          ></button>
+          <p class="detalle__ubicacion" id="ubicacion"></p>
         </div>
 
-        <ul class="detalle__datos">
-          <li><span data-icono="reloj"></span> Medio día (4 hs)</li>
-          <li><span data-icono="pin"></span> Plaza Independencia</li>
-          <li><span data-icono="idioma"></span> Español</li>
-          <li><span data-icono="check"></span> Cancelación gratis</li>
-        </ul>
+        <ul class="detalle__datos" id="datos"></ul>
       </section>
 
       <section
         class="contenedor detalle__galeria"
+        id="galeria"
         aria-label="Galería de fotos"
-      >
-        <img
-          src="img/galeria.jpg"
-          alt="Vista de la ciudad de Tandil desde un mirador"
-        />
-        <div class="galeria__secundarias">
-          <img
-            src="img/galeria1.jpg"
-            alt="Atardecer sobre las rocas de La Movediza"
-          />
-          <img
-            src="img/galeria2.jpg"
-            alt="Persona haciendo tirolesa entre los árboles"
-          />
-          <img
-            src="img/galeria3.png"
-            alt="Roca en equilibrio al atardecer en el Cerro Centinela"
-          />
-          <img
-            src="img/galeria4.jpg"
-            alt="Dos personas a caballo por un camino de árboles"
-          />
-        </div>
-      </section>
+      ></section>
 
       <div class="contenedor detalle__columnas">
         <article class="detalle__info">
           <section class="detalle__seccion" aria-labelledby="sec-sobre">
             <h2 id="sec-sobre">Sobre esta experiencia</h2>
-            <p>
-              Recorré lo mejor de Tandil en una mañana. Pasamos por el centro
-              histórico, el Parque Independencia con vista a la ciudad y los
-              puntos más lindos de las sierras, con tiempo para sacar fotos y
-              probar productos de la zona.
-            </p>
+            <p id="descripcion"></p>
           </section>
 
           <section class="detalle__seccion" aria-labelledby="sec-incluye">
             <h2 id="sec-incluye">¿Qué incluye?</h2>
-            <ul class="detalle__lista">
-              <li>Guía local durante todo el recorrido</li>
-              <li>Traslado en minivan</li>
-              <li>Entrada al Parque Independencia</li>
-              <li>Degustación de productos regionales</li>
-            </ul>
+            <ul class="detalle__lista" id="incluye"></ul>
           </section>
 
           <section class="detalle__seccion" aria-labelledby="sec-accesibilidad">
             <h2 id="sec-accesibilidad">Accesibilidad</h2>
-            <p>
-              Apto para movilidad reducida. Las paradas principales tienen
-              acceso en vehículo.
-            </p>
+            <p id="accesibilidad"></p>
           </section>
 
           <section class="detalle__seccion" aria-labelledby="sec-encuentro">
             <h2 id="sec-encuentro">Punto de encuentro</h2>
-            <p>
-              Plaza Independencia, Tandil. Nos encontramos frente a la fuente
-              central, 15 minutos antes de la salida.
-            </p>
+            <p id="encuentro"></p>
             <iframe
               class="detalle__mapa"
-              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d6345.074484194427!2d-59.143400348207756!3d-37.32978785280037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sar!4v1792184403275!5m2!1ses!2sar"
-              width="600"
-              height="450"
-              style="border: 0"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="strict-origin-when-cross-origin"
-              title="Mapa con la Plaza Independencia de Tandil"
+              id="mapa"
+              title=""
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
-              allowfullscreen
             ></iframe>
           </section>
+
           <section
             class="detalle__seccion detalle__seccion--amplia"
             aria-labelledby="sec-salidas"
+            id="seccion-salidas"
           >
             <div class="detalle__cabecera">
               <h2 id="sec-salidas">Próximas salidas</h2>
@@ -202,50 +151,7 @@
                 confirmes tu reserva.
               </p>
             </div>
-
-            <ul class="salidas">
-              <li class="salida">
-                <div>
-                  <p class="salida__fecha">Sábado 17 de octubre · 9:00</p>
-                  <p class="salida__cupos">Quedan 7 lugares</p>
-                </div>
-                <button
-                  type="button"
-                  class="boton boton--secundario boton--chico"
-                  aria-label="Elegir la salida del sábado 17 de octubre a las 9:00"
-                >
-                  Elegir
-                </button>
-              </li>
-
-              <li class="salida">
-                <div>
-                  <p class="salida__fecha">Domingo 18 de octubre · 9:00</p>
-                  <p class="salida__cupos">Quedan 8 lugares</p>
-                </div>
-                <button
-                  type="button"
-                  class="boton boton--secundario boton--chico"
-                  aria-label="Elegir la salida del domingo 18 de octubre a las 9:00"
-                >
-                  Elegir
-                </button>
-              </li>
-
-              <li class="salida">
-                <div>
-                  <p class="salida__fecha">Lunes 19 de octubre · 9:00</p>
-                  <p class="salida__cupos">Sin cupo</p>
-                </div>
-                <button
-                  type="button"
-                  class="boton boton--secundario boton--chico"
-                  disabled
-                >
-                  No disponible
-                </button>
-              </li>
-            </ul>
+            <ul class="salidas" id="salidas"></ul>
           </section>
 
           <section
@@ -254,122 +160,9 @@
           >
             <div class="detalle__cabecera">
               <h2 id="sec-opiniones">Opiniones</h2>
-              <p class="detalle__nota">★ 4,2 · 124 reseñas</p>
+              <p class="detalle__nota" id="resumen-opiniones"></p>
             </div>
-
-            <ul class="opiniones">
-              <li class="opinion">
-                <div class="opinion__autor">
-                  <img
-                    class="opinion__avatar"
-                    src="img/avatar-lucia.jpg"
-                    alt=""
-                  />
-                  <div>
-                    <p class="opinion__nombre">Lucía</p>
-                    <p class="opinion__origen">Mar del Plata, Argentina</p>
-                  </div>
-                </div>
-                <p class="opinion__valoracion">
-                  <span
-                    class="estrellas"
-                    role="img"
-                    aria-label="5 de 5 estrellas"
-                    >★★★★★</span
-                  >
-                  · Hace 2 días
-                </p>
-                <p class="opinion__texto">
-                  Un recorrido muy lindo. El guía conocía cada rincón y las
-                  vistas desde el Parque Independencia valen la pena. Las
-                  degustaciones al final fueron lo mejor del día.
-                </p>
-              </li>
-
-              <li class="opinion">
-                <div class="opinion__autor">
-                  <img
-                    class="opinion__avatar"
-                    src="img/avatar-martin.jpg"
-                    alt=""
-                  />
-                  <div>
-                    <p class="opinion__nombre">Martín</p>
-                    <p class="opinion__origen">Rosario, Argentina</p>
-                  </div>
-                </div>
-                <p class="opinion__valoracion">
-                  <span
-                    class="estrellas"
-                    role="img"
-                    aria-label="5 de 5 estrellas"
-                    >★★★★★</span
-                  >
-                  · Hace 4 días
-                </p>
-                <p class="opinion__texto">
-                  Ideal para conocer Tandil en una mañana. Muy bien organizado y
-                  puntual.
-                </p>
-              </li>
-
-              <li class="opinion">
-                <div class="opinion__autor">
-                  <img
-                    class="opinion__avatar"
-                    src="img/avatar-marcos.jpg"
-                    alt=""
-                  />
-                  <div>
-                    <p class="opinion__nombre">Marcos</p>
-                    <p class="opinion__origen">Mar del Plata, Argentina</p>
-                  </div>
-                </div>
-                <p class="opinion__valoracion">
-                  <span
-                    class="estrellas"
-                    role="img"
-                    aria-label="5 de 5 estrellas"
-                    >★★★★★</span
-                  >
-                  · Hace 6 días
-                </p>
-                <p class="opinion__texto">
-                  Buenas explicaciones y paradas para sacar fotos. Volvería a
-                  hacerlo.
-                </p>
-              </li>
-
-              <li class="opinion">
-                <div class="opinion__autor">
-                  <img
-                    class="opinion__avatar"
-                    src="img/avatar-carla.jpg"
-                    alt=""
-                  />
-                  <div>
-                    <p class="opinion__nombre">Carla</p>
-                    <p class="opinion__origen">Córdoba, Argentina</p>
-                  </div>
-                </div>
-                <p class="opinion__valoracion">
-                  <span
-                    class="estrellas"
-                    role="img"
-                    aria-label="4 de 5 estrellas"
-                    >★★★★☆</span
-                  >
-                  · Hace 1 semana
-                </p>
-                <p class="opinion__texto">
-                  Fuimos en familia y los chicos disfrutaron mucho. Las
-                  explicaciones sobre la historia de la ciudad fueron claras y
-                  entretenidas, y las paradas para sacar fotos estuvieron muy
-                  bien elegidas.
-                </p>
-              </li>
-            </ul>
-
+            <ul class="opiniones" id="opiniones"></ul>
             <button
               type="button"
               class="boton boton--secundario boton--chico opiniones__mas"
@@ -381,18 +174,27 @@
 
         <form
           class="detalle__reserva"
+          id="reserva"
           action="reserva.html"
           method="get"
           aria-label="Reservar esta experiencia"
         >
-          <input type="hidden" name="id" value="6" />
+          <input type="hidden" name="id" id="reserva-id" />
+          <input type="hidden" name="salida" id="reserva-salida" />
 
-          <p class="reserva__precio"><strong>$28.000</strong> por persona</p>
+          <p class="reserva__precio">
+            <strong id="precio"></strong> por persona
+          </p>
 
           <div class="reserva__campos">
             <label class="reserva__campo">
               <span class="solo-lectores">Fecha</span>
-              <input type="text" name="fecha" placeholder="Elegí un día" />
+              <input
+                type="text"
+                id="fecha"
+                placeholder="Elegí un día"
+                readonly
+              />
             </label>
             <label class="reserva__campo">
               <span class="solo-lectores">Personas</span>
@@ -405,12 +207,14 @@
             </label>
           </div>
 
+          <p class="reserva__error" id="reserva-error" role="alert" hidden></p>
+
           <button type="submit" class="boton boton--primario">Reservar</button>
 
           <button
             type="button"
             class="boton boton--secundario reserva__guardar"
-            data-id="6"
+            id="guardar"
             aria-pressed="false"
           >
             <span data-icono="corazon"></span> Guardar en favoritos
@@ -467,5 +271,10 @@
     <script src="js/iconos.js" defer></script>
     <script src="js/comunes.js" defer></script>
     <script src="js/favoritos.js" defer></script>
+    <script src="data/experiencias.js" defer></script>
+    <script src="data/opiniones.js" defer></script>
+    <script src="js/cards.js" defer></script>
+    <script src="js/fechas.js" defer></script>
+    <script src="js/detalle.js" defer></script>
   </body>
 </html>

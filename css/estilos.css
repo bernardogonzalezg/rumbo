@@ -779,6 +779,225 @@ main {
   gap: var(--esp-5) var(--esp-4);
   align-content: flex-start;
 }
+
+/* ===== 9. RESERVA ===== */
+
+.pagina-reserva {
+  padding-bottom: 0;                     /* pisa el main { padding-bottom } de la Home */
+}
+
+.pagina-reserva__encabezado {
+  padding-block: var(--esp-5);           /* 32 + título de 44 + 32 = 108 */
+}
+
+.pagina-reserva__encabezado h1 {
+  font: var(--texto-h2);
+}
+
+.pagina-reserva__columnas {
+  display: flex;
+  align-items: flex-start;
+  gap: 48px;
+  padding-bottom: var(--esp-6);          /* 64 */
+}
+
+.pagina-reserva__vacio {
+  padding-block: var(--esp-6);
+}
+
+/* --- Formulario: 820 de ancho, gap 24 --- */
+
+.formulario {
+  flex: 0 0 820px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-4);
+  padding: 20px 10px;                    /* estimado: verificar en Figma */
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-l);
+}
+
+.formulario h2 {
+  font: var(--texto-h3);
+}
+
+.formulario__fila {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--esp-3);
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-1);                     /* 4 */
+}
+
+.campo label {
+  font: var(--texto-btn);                /* Label/Button */
+}
+
+.campo input {
+  width: 100%;
+  min-width: 0;
+  height: 40px;
+  padding: 0 var(--esp-3);
+  border: 1px solid var(--borde-input);
+  border-radius: var(--radio-m);
+  font: var(--texto-input);
+}
+
+.campo input::placeholder {
+  font: var(--texto-inputcap);           /* Label/Input-Caption */
+  color: var(--texto-secundario);
+  opacity: 1;
+}
+
+.campo__ayuda {
+  margin: 0;
+  font: var(--texto-inputcap);
+  color: var(--texto-secundario);
+}
+
+.formulario__terminos {
+  display: flex;
+  align-items: center;
+  gap: var(--esp-2);
+  font: var(--texto-input);
+}
+
+.formulario__terminos input {
+  width: 24px;
+  height: 24px;
+  accent-color: var(--color-primary);
+}
+
+.formulario .boton {
+  width: 100%;
+  height: 44px;
+  padding-block: 0;
+}
+
+.formulario__aviso {
+  margin: 0;
+  font: var(--texto-small);
+  color: var(--texto-secundario);
+}
+
+/* --- Resumen: 412 de ancho, padding 24, gap 16 --- */
+
+.resumen {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-3);
+  padding: var(--esp-4);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-l);
+}
+
+.resumen p {
+  margin: 0;
+}
+
+.resumen hr {
+  width: 100%;
+  height: 1px;
+  margin: 0;
+  border: 0;
+  background: var(--borde);
+}
+
+.resumen__cabecera {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.resumen__cabecera > div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.resumen__cabecera img {
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radio-m);
+  object-fit: cover;
+}
+
+.resumen__titulo,
+.resumen__etiqueta {
+  font: var(--texto-body);
+}
+
+.resumen__dato {
+  font: var(--texto-small);
+  color: var(--texto-secundario);
+}
+
+.resumen__dato--fuerte {
+  color: var(--texto-principal);
+}
+
+.resumen__fila {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--esp-3);
+}
+
+.resumen__contador {
+  display: flex;
+  align-items: center;
+  gap: var(--esp-3);
+}
+
+.resumen__contador output {
+  min-width: 16px;
+  text-align: center;
+  font: var(--texto-btn);
+}
+
+.resumen__paso {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radio-m);
+  background: var(--blanco);
+  color: var(--color-primary);
+  font: var(--texto-btn);
+  cursor: pointer;
+}
+
+.resumen__paso:hover:not(:disabled) {
+  background: var(--color-secundary-3);
+}
+
+.resumen__paso:disabled {
+  border-color: var(--borde);
+  color: var(--texto-muted);
+  cursor: not-allowed;
+}
+
+.resumen__precio {
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-3);
+}
+
+.resumen__total {
+  font: var(--texto-h4);
+}
+
+.resumen__cancelacion {
+  font: var(--texto-small);
+  color: var(--color-primary);
+}
+
 /* =============================================================
    7. RESPONSIVE: mobile (menos de 768 px, frame de Figma de 390)
    ============================================================= */
@@ -1012,11 +1231,11 @@ main {
 .detalle__datos {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--esp-5);                     
+  gap: var(--esp-5);
   margin: 0;
   padding: 0;
   list-style: none;
-  font: var(--texto-small);   
+  font: var(--texto-small);
 }
 
 .detalle__datos li {
@@ -1026,7 +1245,7 @@ main {
 }
 
 .detalle__datos svg {
-  width: 20px;                           
+  width: 20px;
   height: 20px;
 }
 
@@ -1035,7 +1254,10 @@ main {
 .detalle__galeria {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  grid-template-rows: minmax(0, 1fr);    /* ← nueva: la fila no crece más que los 380 */
+  grid-template-rows: minmax(
+    0,
+    1fr
+  ); /* ← nueva: la fila no crece más que los 380 */
   gap: var(--esp-2);
   height: 380px;
 }
@@ -1058,28 +1280,28 @@ main {
 /* --- Columnas: información (izquierda) y reserva (derecha) --- */
 
 .detalle__columnas {
-display: flex;
+  display: flex;
   gap: 48px;
-  padding-top: var(--esp-5);             /* 32 de respiro debajo de la galería */
-  padding-bottom: var(--esp-6);          /* 64 */
+  padding-top: var(--esp-5); /* 32 de respiro debajo de la galería */
+  padding-bottom: var(--esp-6); /* 64 */
 }
 
 .detalle__info {
   display: flex;
   flex-direction: column;
   gap: 48px;
-  flex: 0 0 820px; 
+  flex: 0 0 820px;
   min-width: 0;
 }
 
 .detalle__reserva {
   display: flex;
   flex-direction: column;
-  gap: var(--esp-3);   
+  gap: var(--esp-3);
   flex: 1;
   min-width: 0;
-  align-self: flex-start;                /* sin esto se estira y el sticky no funciona */
-  position: sticky;                      /* queda fija al scrollear: borrá estas dos líneas si no la querés */
+  align-self: flex-start; /* sin esto se estira y el sticky no funciona */
+  position: sticky; /* queda fija al scrollear: borrá estas dos líneas si no la querés */
   top: var(--esp-4);
   padding: var(--esp-4);
   background: var(--blanco);
@@ -1098,7 +1320,7 @@ display: flex;
 
 .reserva__campos {
   display: flex;
-  gap: var(--esp-3); 
+  gap: var(--esp-3);
 }
 
 .reserva__campo {
@@ -1124,7 +1346,7 @@ display: flex;
 
 .detalle__reserva .boton {
   width: 100%;
-  height: 40px;
+  height: 44px;
   padding-block: 0;
 }
 
@@ -1218,13 +1440,14 @@ display: flex;
 /* --- Secciones amplias: Próximas salidas y Opiniones --- */
 
 .detalle__seccion--amplia {
-  gap: var(--esp-5);                     /* 32 entre cabecera y contenido */
+  gap: var(--esp-5); /* 32 entre cabecera y contenido */
+  padding-inline: 10px;
 }
 
 .detalle__cabecera {
   display: flex;
   flex-direction: column;
-  gap: var(--esp-3);                     /* 16, a confirmar en Figma */
+  gap: var(--esp-3); /* 16, a confirmar en Figma */
 }
 
 .detalle__nota {
@@ -1246,7 +1469,7 @@ display: flex;
 }
 
 .boton--secundario:focus-visible {
-  outline: 2px solid var(--color-acento);   /* el foco blanco del .boton no se vería sobre fondo blanco */
+  outline: 2px solid var(--color-acento); /* el foco blanco del .boton no se vería sobre fondo blanco */
   outline-offset: 2px;
 }
 
@@ -1277,9 +1500,17 @@ display: flex;
   justify-content: space-between;
   align-items: center;
   gap: var(--esp-4);
-  padding: var(--esp-4);
+  padding: var(--esp-3);
   border: 1px solid var(--borde-input);
   border-radius: var(--radio-l);
+}
+
+.salida > div {
+  /* bloque de texto: gap 4, padding 10 */
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-1);
+  padding: 10px;
 }
 
 .salida p {
@@ -1291,19 +1522,19 @@ display: flex;
 }
 
 .salida__cupos {
-  font: var(--texto-meta);
+  font: var(--texto-small);
   color: var(--texto-secundario);
 }
 
 .salida .boton {
-  min-width: 200px;
+  min-width: 201px;
 }
 
 /* --- Opiniones --- */
 
 .opiniones {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 378px));
   gap: var(--esp-4);
   margin: 0;
   padding: 0;
@@ -1314,6 +1545,12 @@ display: flex;
   display: flex;
   flex-direction: column;
   gap: var(--esp-2);
+}
+
+.opinion__valoracion {
+  font: var(--texto-meta);
+  line-height: 20px; /* con esto la reseña mide 148 */
+  color: var(--texto-secundario);
 }
 
 .opinion p {
@@ -1337,8 +1574,7 @@ display: flex;
   font: var(--texto-body);
 }
 
-.opinion__origen,
-.opinion__valoracion {
+.opinion__origen {
   font: var(--texto-meta);
   color: var(--texto-secundario);
 }
@@ -1350,7 +1586,7 @@ display: flex;
 .opinion__texto {
   display: -webkit-box;
   -webkit-line-clamp: 3;
-  line-clamp: 3;                         /* versión estándar, para compatibilidad */
+  line-clamp: 3; /* versión estándar, para compatibilidad */
   -webkit-box-orient: vertical;
   overflow: hidden;
   font: var(--texto-body);
@@ -1358,4 +1594,25 @@ display: flex;
 
 .opiniones__mas {
   align-self: flex-start;
+}
+
+.salida--elegida {
+  border-color: var(--color-primary);
+  box-shadow: inset 0 0 0 1px var(--color-primary);
+}
+
+.reserva__campo input[readonly] {
+  cursor: pointer;
+}
+
+.reserva__error {
+  margin: 0;
+  padding-left: var(--esp-2);
+  border-left: 3px solid var(--favorito);
+  font: var(--texto-inputcap);
+  color: var(--texto-principal);
+}
+
+.detalle__vacio {
+  padding-block: var(--esp-6);
 }
