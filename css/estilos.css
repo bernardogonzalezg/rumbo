@@ -997,6 +997,244 @@ main {
   font: var(--texto-small);
   color: var(--color-primary);
 }
+/* --- Errores de validación --- */
+
+.campo__error {
+  margin: 0;
+  font: var(--texto-inputcap);
+  color: var(--color-error);
+}
+
+.campo__error:empty {
+  display: none;
+}
+
+.campo input[aria-invalid="true"] {
+  border-color: var(--color-error);
+  box-shadow: inset 0 0 0 1px var(--color-error);   /* engrosa el borde sin mover el layout */
+}
+
+/* --- Modales (confirmación y cancelación) --- */
+
+.modal {
+  width: 480px;
+  max-width: calc(100% - 2 * var(--esp-3));
+  padding: var(--esp-5);                     /* 32 */
+  border: 0;
+  border-radius: var(--radio-l);
+  text-align: center;
+}
+
+.modal[open] {                               /* sin [open], el flex pisaría el display:none del dialog cerrado */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--esp-3);                         /* 16 */
+}
+
+.modal::backdrop {
+  background: rgb(0 0 0 / 0.6);
+}
+
+.modal h2,
+.modal p {
+  margin: 0;
+}
+
+.modal h2 {
+  font: var(--texto-h3);
+}
+
+/* Círculo con ícono: verde (check) o rojo (cerrar) */
+.modal__check {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border: 2px solid var(--color-primary);
+  border-radius: 50%;
+  color: var(--color-primary);
+}
+
+.modal__check svg {
+  width: 32px;                               /* estimado: ajustar con Figma */
+  height: 32px;
+}
+
+.modal__check--error {
+  border-color: var(--color-error);
+  color: var(--color-error);
+}
+
+.modal__texto {
+  font: var(--texto-body);
+  color: var(--texto-secundario);
+}
+
+.modal__codigo {
+  padding: 5px 10px;
+  background: var(--color-primary-1);
+  color: var(--blanco);
+  font: var(--texto-body);
+}
+
+.modal__detalle {
+  font: var(--texto-h5);                     /* la línea en negrita: título · fecha · personas */
+}
+
+.modal .boton {
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+}
+
+/* --- Botón de peligro (contorno rojo) --- */
+
+.boton--peligro {
+  background: var(--blanco);
+  border: 1px solid var(--color-error);
+  color: var(--color-error);
+}
+
+.boton--peligro:hover {
+  background: color-mix(in srgb, var(--color-error) 8%, white);
+}
+
+.boton--peligro:focus-visible {
+  outline: 2px solid var(--texto-principal);
+  outline-offset: 2px;
+}
+
+/* ===== 10. CUENTA ===== */
+
+.cuenta {
+  padding-bottom: 0;
+}
+
+.cuenta__contenido {
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-4);
+  padding-block: var(--esp-5) var(--esp-6);
+}
+
+.cuenta__contenido h1 {
+  font: var(--texto-h2);
+}
+
+/* --- Pestañas --- */
+
+.pestanas {
+  display: flex;
+  border-bottom: 1px solid var(--borde);
+  margin-bottom: var(--esp-4);
+}
+
+.pestanas button {
+  flex: 1;
+  padding: 12px var(--esp-3);
+  margin-bottom: -1px;                     /* la línea activa tapa la gris de abajo */
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: none;
+  font: var(--texto-small);
+  color: var(--texto-secundario);
+  cursor: pointer;
+}
+
+.pestanas button:hover {
+  color: var(--texto-principal);
+}
+
+.pestanas button[aria-selected="true"] {
+  border-bottom-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+/* --- Viajes guardados: 5 columnas de 220 con gap 45 = 1280 --- */
+
+.cuenta__grilla {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: var(--esp-5) 45px;
+}
+
+.cuenta__grilla .card {
+  width: 100%;
+}
+
+.cuenta__vacio {
+  grid-column: 1 / -1;
+  font: var(--texto-body);
+}
+
+/* --- Próximos viajes --- */
+
+.cuenta__lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.viaje {
+  display: flex;
+  align-items: center;
+  gap: var(--esp-3);
+  padding: var(--esp-2);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-l);
+}
+
+.viaje img {
+  flex-shrink: 0;
+  width: 160px;
+  height: 120px;
+  border-radius: var(--radio-m);
+  object-fit: cover;
+}
+
+.viaje__info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-1);
+}
+
+.viaje__info p {
+  margin: 0;
+  font: var(--texto-small);
+}
+
+.viaje__titulo {
+  margin: 0;
+  font: var(--texto-h5);
+}
+
+.viaje__estado {
+  align-self: flex-start;
+  padding: 2px var(--esp-2);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-primary) 30%, white);
+  color: var(--texto-principal);
+  font: var(--texto-meta);
+}
+
+.viaje__acciones {
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-2);
+  width: 140px;                            /* estimado: ajustar con la medida de Figma */
+}
+
+.viaje__acciones .boton {
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+}
 
 /* =============================================================
    7. RESPONSIVE: mobile (menos de 768 px, frame de Figma de 390)

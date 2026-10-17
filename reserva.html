@@ -102,7 +102,9 @@
                 placeholder="Tu nombre"
                 autocomplete="given-name"
                 required
+                aria-describedby="error-nombre"
               />
+              <p class="campo__error" id="error-nombre"></p>
             </div>
             <div class="campo">
               <label for="apellido"
@@ -115,7 +117,9 @@
                 placeholder="Tu apellido"
                 autocomplete="family-name"
                 required
+                aria-describedby="error-apellido"
               />
+              <p class="campo__error" id="error-apellido"></p>
             </div>
           </div>
 
@@ -128,11 +132,12 @@
               placeholder="ejemplo@gmail.com"
               autocomplete="email"
               required
-              aria-describedby="ayuda-email"
+              aria-describedby="ayuda-email error-email"
             />
             <p class="campo__ayuda" id="ayuda-email">
               Te enviamos la confirmación acá
             </p>
+            <p class="campo__error" id="error-email"></p>
           </div>
 
           <div class="campo">
@@ -146,20 +151,30 @@
               placeholder="Ej: 249 123 4567"
               autocomplete="tel"
               required
+              aria-describedby="error-telefono"
             />
+            <p class="campo__error" id="error-telefono"></p>
           </div>
 
-          <label class="formulario__terminos">
-            <input id="terminos" name="terminos" type="checkbox" required />
-            Acepto los términos y condiciones
-          </label>
+          <div class="campo">
+            <label class="formulario__terminos">
+              <input
+                id="terminos"
+                name="terminos"
+                type="checkbox"
+                required
+                aria-describedby="error-terminos"
+              />
+              Acepto los términos y condiciones
+            </label>
+            <p class="campo__error" id="error-terminos"></p>
+          </div>
 
           <button type="submit" class="boton boton--primario">
             Finalizar reserva
           </button>
           <p class="formulario__aviso">No se cobra nada ahora</p>
         </form>
-
         <aside class="resumen" aria-labelledby="titulo-resumen">
           <h2 class="solo-lectores" id="titulo-resumen">
             Resumen de tu reserva
@@ -280,7 +295,24 @@
         <p class="footer__legal">© 2026 Rumbo · Trabajo académico, UNICEN</p>
       </div>
     </footer>
-
+    <dialog
+      class="modal"
+      id="modal"
+      aria-labelledby="modal-titulo"
+      aria-describedby="modal-texto"
+    >
+      <div class="modal__check" data-icono="check" aria-hidden="true"></div>
+      <h2 id="modal-titulo">¡Reserva confirmada!</h2>
+      <p class="modal__texto" id="modal-texto">
+        Te enviamos los detalles al email.
+      </p>
+      <p class="modal__codigo" id="m-codigo"></p>
+      <p class="modal__detalle" id="m-detalle"></p>
+      <a class="boton boton--primario" href="cuenta.html#proximos"
+        >Ver mis viajes</a
+      >
+      <a class="boton boton--secundario" href="index.html">Volver al inicio</a>
+    </dialog>
     <script src="js/iconos.js" defer></script>
     <script src="js/comunes.js" defer></script>
     <script src="data/experiencias.js" defer></script>

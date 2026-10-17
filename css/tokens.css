@@ -39,6 +39,9 @@
   --blanco:           #FFFFFF;
   --favorito:         #E5484D;
  
+  /* Color · Error */
+  --color-error: #B3261E;
+  
   /* Tipografías */
   --fuente-titulos: "Poppins", sans-serif;
   --fuente-cuerpo:  "Inter", sans-serif;

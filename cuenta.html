@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>City tour por Tandil · Rumbo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/estilos.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="contenedor header__interior">
+        <a href="index.html" class="header__logo">Rumbo</a>
+
+        <nav class="header__nav" aria-label="Principal">
+          <a href="explorar.html?filtro=ofertas">Ofertas</a>
+          <a href="explorar.html?orden=recomendados">Recomendaciones</a>
+          <a href="explorar.html">Experiencias</a>
+        </nav>
+
+        <div class="header__acciones">
+          <button class="header__idioma" type="button">
+            Español (AR) <span data-icono="chevron"></span>
+          </button>
+
+          <div class="header__cuenta">
+            <button
+              class="header__usuario"
+              type="button"
+              aria-label="Mi cuenta"
+              aria-expanded="false"
+              aria-controls="menu-cuenta"
+              data-icono="usuario"
+            ></button>
+
+            <ul class="menu-cuenta" id="menu-cuenta" hidden>
+              <li>
+                <a href="cuenta.html#guardados"
+                  ><span data-icono="guardados"></span>Viajes guardados</a
+                >
+              </li>
+              <li>
+                <a href="cuenta.html#proximos"
+                  ><span data-icono="proximos"></span>Próximos viajes</a
+                >
+              </li>
+              <li>
+                <a href="cuenta.html#notificaciones"
+                  ><span data-icono="notificaciones"></span>Notificaciones</a
+                >
+              </li>
+              <li class="menu-cuenta__separador" role="separator"></li>
+              <li>
+                <a href="cuenta.html#preferencias"
+                  ><span data-icono="preferencias"></span>Preferencias</a
+                >
+              </li>
+              <li>
+                <a href="#"><span data-icono="ayuda"></span>Centro de ayuda</a>
+              </li>
+              <li class="menu-cuenta__separador" role="separator"></li>
+              <li>
+                <a href="index.html"
+                  ><span data-icono="salir"></span>Cerrar sesión</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="cuenta" id="pagina">
+      <div class="contenedor cuenta__contenido">
+        <h1>Mi cuenta</h1>
+
+        <div
+          class="pestanas"
+          role="tablist"
+          aria-label="Secciones de tu cuenta"
+        >
+          <button
+            type="button"
+            role="tab"
+            id="tab-guardados"
+            data-tab="guardados"
+            aria-controls="panel-guardados"
+            aria-selected="true"
+          >
+            Viajes guardados
+          </button>
+          <button
+            type="button"
+            role="tab"
+            id="tab-proximos"
+            data-tab="proximos"
+            aria-controls="panel-proximos"
+            aria-selected="false"
+            tabindex="-1"
+          >
+            Próximos viajes
+          </button>
+          <button
+            type="button"
+            role="tab"
+            id="tab-preferencias"
+            data-tab="preferencias"
+            aria-controls="panel-preferencias"
+            aria-selected="false"
+            tabindex="-1"
+          >
+            Preferencias
+          </button>
+          <button
+            type="button"
+            role="tab"
+            id="tab-notificaciones"
+            data-tab="notificaciones"
+            aria-controls="panel-notificaciones"
+            aria-selected="false"
+            tabindex="-1"
+          >
+            Notificaciones
+          </button>
+        </div>
+
+        <section
+          role="tabpanel"
+          id="panel-guardados"
+          aria-labelledby="tab-guardados"
+          tabindex="0"
+        >
+          <div class="cuenta__grilla" id="guardados"></div>
+        </section>
+
+        <section
+          role="tabpanel"
+          id="panel-proximos"
+          aria-labelledby="tab-proximos"
+          tabindex="0"
+          hidden
+        >
+          <ul class="cuenta__lista" id="proximos"></ul>
+        </section>
+
+        <section
+          role="tabpanel"
+          id="panel-preferencias"
+          aria-labelledby="tab-preferencias"
+          tabindex="0"
+          hidden
+        >
+          <p>Próximamente.</p>
+        </section>
+
+        <section
+          role="tabpanel"
+          id="panel-notificaciones"
+          aria-labelledby="tab-notificaciones"
+          tabindex="0"
+          hidden
+        >
+          <p>Próximamente.</p>
+        </section>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="contenedor">
+        <div class="footer__principal">
+          <div class="footer__marca">
+            <p class="footer__logo">Rumbo</p>
+            <p class="footer__descripcion">
+              Descubrí y reservá escapadas y experiencias por toda Argentina.
+            </p>
+          </div>
+
+          <div class="footer__columnas">
+            <nav aria-label="Explorar">
+              <h2 class="footer__titulo">Explorar</h2>
+              <ul class="footer__lista">
+                <li><a href="explorar.html">Destinos</a></li>
+                <li><a href="explorar.html">Experiencias</a></li>
+                <li><a href="explorar.html?filtro=ofertas">Ofertas</a></li>
+              </ul>
+            </nav>
+
+            <nav aria-label="Empresa">
+              <h2 class="footer__titulo">Empresa</h2>
+              <ul class="footer__lista">
+                <li><a href="#">Sobre Rumbo</a></li>
+                <li><a href="#">Contacto</a></li>
+                <li><a href="#">Ayuda</a></li>
+              </ul>
+            </nav>
+
+            <nav aria-label="Legal">
+              <h2 class="footer__titulo">Legal</h2>
+              <ul class="footer__lista">
+                <li><a href="#">Términos</a></li>
+                <li><a href="#">Privacidad</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+
+        <p class="footer__legal">© 2026 Rumbo · Trabajo académico, UNICEN</p>
+      </div>
+    </footer>
+<dialog class="modal" id="modal-cancelar" aria-labelledby="cancelar-titulo" aria-describedby="cancelar-texto">
+  <div class="modal__check modal__check--error" data-icono="cerrar" aria-hidden="true"></div>
+  <h2 id="cancelar-titulo">¿Cancelar esta reserva?</h2>
+  <p class="modal__detalle" id="cancelar-texto"></p>
+  <button type="button" class="boton boton--peligro" id="cancelar-si">Sí, cancelar reserva</button>
+  <button type="button" class="boton boton--secundario" id="cancelar-no">No, mantener</button>
+</dialog>
+    <script src="js/iconos.js" defer></script>
+    <script src="js/comunes.js" defer></script>
+    <script src="data/experiencias.js" defer></script>
+    <script src="js/favoritos.js" defer></script>
+    <script src="js/cards.js" defer></script>
+    <script src="js/fechas.js" defer></script>
+    <script src="js/cuenta.js" defer></script>
+  </body>
+</html>

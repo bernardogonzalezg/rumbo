@@ -1,6 +1,5 @@
 const CLAVE_FAVORITOS = "rumbo_favoritos";
 
-
 function leerFavoritos() {
   try {
     return JSON.parse(localStorage.getItem(CLAVE_FAVORITOS)) || [];
@@ -39,5 +38,3 @@ document.addEventListener("click", (evento) => {
     .querySelectorAll(`[data-id="${id}"][aria-pressed]`)
     .forEach((b) => b.setAttribute("aria-pressed", activo));
 });
-
-const boton = evento.target.closest(".card__favorito, .detalle__favorito");
