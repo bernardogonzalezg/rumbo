@@ -1,0 +1,106 @@
+/* Variables del sistema de diseño de Rumbo */
+
+
+:root {
+  /* Color · Primario (positivos = más claros, "n" = más oscuros) */
+  --color-primary:    #387B66;
+  --color-primary-1:  #43937A;
+  --color-primary-2:  #4EAC8F;
+  --color-primary-3:  #65B99F;
+  --color-primary-n1: #2D6252;
+  --color-primary-n2: #214A3D;
+  --color-primary-n3: #163129;
+ 
+  /* Color · Secundario */
+  --color-secundary:    #FFCB82;
+  --color-secundary-1:  #FFDAA6;
+  --color-secundary-2:  #FFE9C9;
+  --color-secundary-3:  #FFF8ED;
+  --color-secundary-n1: #FFBC5E;
+  --color-secundary-n2: #FFAD3B;
+  --color-secundary-n3: #FF9E17;
+ 
+  /* Color · Acento (marrón del CTA principal) */
+  --color-acento:    #381E05;
+  --color-acento-1:  #4B2807;
+  --color-acento-2:  #5E3208;
+  --color-acento-3:  #703C0A;
+  --color-acento-n1: #251403;
+  --color-acento-n2: #170D02;
+  --color-acento-n3: #090501;
+ 
+  /* Color · Neutros y estados */
+  --texto-principal:  #1A1A1A;
+  --texto-secundario: #6A6A6A;
+  --texto-muted:      #9A9A9A;  /* no pasa 4.5:1: solo para elementos decorativos */
+  --borde:            #D9D9D9;
+  --borde-input:      #8A8A8A;  /* ≥3:1 sobre blanco (WCAG 1.4.11) */
+  --fondo-disabled:   #E0E0E0;
+  --blanco:           #FFFFFF;
+  --favorito:         #E5484D;
+ 
+  /* Tipografías */
+  --fuente-titulos: "Poppins", sans-serif;
+  --fuente-cuerpo:  "Inter", sans-serif;
+ 
+  /* Pesos de fuente */
+  --peso-regular:  400;
+  --peso-medium:   500;
+  --peso-semibold: 600;
+ 
+  /* Text styles · Heading (Poppins) */
+  --display-size: 56px;  --display-lh: 1.10;  --display-peso: var(--peso-semibold);
+  --h1-size: 40px;  --h1-lh: 1.10;  --h1-peso: var(--peso-semibold);
+  --h2-size: 32px;  --h2-lh: 1.15;  --h2-peso: var(--peso-semibold);
+  --h3-size: 25px;  --h3-lh: 1.20;  --h3-peso: var(--peso-medium);
+  --h4-size: 20px;  --h4-lh: 1.30;  --h4-peso: var(--peso-medium);
+  --h5-size: 14px;  --h5-lh: 1.30;  --h5-peso: var(--peso-semibold);
+ 
+  /* Text styles · Body (Inter) */
+  --body-size:    16px;  --body-lh:    1.50;  --body-peso:    var(--peso-regular);
+  --small-size:   13px;  --small-lh:   1.30;  --small-peso:   var(--peso-regular);
+  --meta-size:    11px;  --meta-lh:    1.30;  --meta-peso:    var(--peso-regular);
+  --caption-size: 11px;  --caption-lh: 1.30;  --caption-peso: var(--peso-semibold);
+ 
+  /* Text styles · Label (Inter) */
+  --btn-size:      14px;  --btn-lh:      1.20;  --btn-peso:      var(--peso-semibold);
+  --input-size:    14px;  --input-lh:    1.30;  --input-peso:    var(--peso-regular);
+  --inputcap-size: 12px;  --inputcap-lh: 1.30;  --inputcap-peso: var(--peso-medium);
+  --nav-size:      13px;  --nav-lh:      1.20;  --nav-peso:      var(--peso-medium);
+  --tag-size:      10px;  --tag-lh:      1.20;  --tag-peso:      var(--peso-semibold);
+ 
+  /* Radios */
+  --radio-m:    8px;
+  --radio-l:    12px;
+  --radio-pill: 999px;
+ 
+  /* Espaciado (confirmá estos valores con tu Figma) */
+  --esp-1: 4px;
+  --esp-2: 8px;
+  --esp-3: 16px;
+  --esp-4: 24px;
+  --esp-5: 32px;
+  --esp-6: 64px;
+ 
+  /* Layout */
+  --ancho-contenido: 1280px;
+
+  /* Text styles completos (peso tamaño/line-height familia) */
+  --texto-display: var(--display-peso) var(--display-size)/var(--display-lh) var(--fuente-titulos);
+  --texto-h1: var(--h1-peso) var(--h1-size)/var(--h1-lh) var(--fuente-titulos);
+  --texto-h2: var(--h2-peso) var(--h2-size)/var(--h2-lh) var(--fuente-titulos);
+  --texto-h3: var(--h3-peso) var(--h3-size)/var(--h3-lh) var(--fuente-titulos);
+  --texto-h4: var(--h4-peso) var(--h4-size)/var(--h4-lh) var(--fuente-titulos);
+  --texto-h5: var(--h5-peso) var(--h5-size)/var(--h5-lh) var(--fuente-titulos);
+
+  --texto-body:    var(--body-peso) var(--body-size)/var(--body-lh) var(--fuente-cuerpo);
+  --texto-small:   var(--small-peso) var(--small-size)/var(--small-lh) var(--fuente-cuerpo);
+  --texto-meta:    var(--meta-peso) var(--meta-size)/var(--meta-lh) var(--fuente-cuerpo);
+  --texto-caption: var(--caption-peso) var(--caption-size)/var(--caption-lh) var(--fuente-cuerpo);
+
+  --texto-btn:      var(--btn-peso) var(--btn-size)/var(--btn-lh) var(--fuente-cuerpo);
+  --texto-input:    var(--input-peso) var(--input-size)/var(--input-lh) var(--fuente-cuerpo);
+  --texto-inputcap: var(--inputcap-peso) var(--inputcap-size)/var(--inputcap-lh) var(--fuente-cuerpo);
+  --texto-nav:      var(--nav-peso) var(--nav-size)/var(--nav-lh) var(--fuente-cuerpo);
+  --texto-tag:      var(--tag-peso) var(--tag-size)/var(--tag-lh) var(--fuente-cuerpo);
+}

@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rumbo · Explorar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/estilos.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="contenedor header__interior">
+        <a href="index.html" class="header__logo">Rumbo</a>
+
+        <nav class="header__nav" aria-label="Principal">
+          <a href="explorar.html?filtro=ofertas">Ofertas</a>
+          <a href="explorar.html?orden=recomendados">Recomendaciones</a>
+          <a href="explorar.html">Experiencias</a>
+        </nav>
+
+        <div class="header__acciones">
+          <button class="header__idioma" type="button">
+            Español (AR) <span data-icono="chevron"></span>
+          </button>
+
+          <div class="header__cuenta">
+            <button
+              class="header__usuario"
+              type="button"
+              aria-label="Mi cuenta"
+              aria-expanded="false"
+              aria-controls="menu-cuenta"
+              data-icono="usuario"
+            ></button>
+
+            <ul class="menu-cuenta" id="menu-cuenta" hidden>
+              <li>
+                <a href="cuenta.html#guardados"
+                  ><span data-icono="guardados"></span>Viajes guardados</a
+                >
+              </li>
+              <li>
+                <a href="cuenta.html#proximos"
+                  ><span data-icono="proximos"></span>Próximos viajes</a
+                >
+              </li>
+              <li>
+                <a href="cuenta.html#notificaciones"
+                  ><span data-icono="notificaciones"></span>Notificaciones</a
+                >
+              </li>
+              <li class="menu-cuenta__separador" role="separator"></li>
+              <li>
+                <a href="cuenta.html#preferencias"
+                  ><span data-icono="preferencias"></span>Preferencias</a
+                >
+              </li>
+              <li>
+                <a href="#"><span data-icono="ayuda"></span>Centro de ayuda</a>
+              </li>
+              <li class="menu-cuenta__separador" role="separator"></li>
+              <li>
+                <a href="index.html"
+                  ><span data-icono="salir"></span>Cerrar sesión</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="contenedor explorar">
+      <div class="explorar__titulo">
+        <div>
+          <h1>Experiencias en Tandil</h1>
+          <p class="explorar__resumen" id="resumen" aria-live="polite">
+            48 resultados · 3 – 9 oct · 2 personas
+          </p>
+        </div>
+
+        <label class="ordenar">
+          Ordenar:
+          <select id="orden" name="orden">
+            <option value="populares">Más populares</option>
+            <option value="menor-precio">Menor precio</option>
+            <option value="mayor-precio">Mayor precio</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="explorar__fila">
+        <form class="filtros" id="filtros" aria-label="Filtros">
+          <fieldset>
+            <legend>Precio por persona</legend>
+            <div class="filtros__precio">
+              <input
+                type="text"
+                inputmode="numeric"
+                name="min"
+                placeholder="Mín"
+                aria-label="Precio mínimo"
+              />
+              <input
+                type="text"
+                inputmode="numeric"
+                name="max"
+                placeholder="Máx"
+                aria-label="Precio máximo"
+              />
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Duración</legend>
+            <label
+              ><input type="checkbox" name="duracion" value="hasta4" /> Hasta 4
+              hs</label
+            >
+            <label
+              ><input type="checkbox" name="duracion" value="mediodia" /> Medio
+              día</label
+            >
+            <label
+              ><input type="checkbox" name="duracion" value="diacompleto" /> Día
+              completo</label
+            >
+            <label
+              ><input type="checkbox" name="duracion" value="variosdias" />
+              Varios días</label
+            >
+          </fieldset>
+
+          <fieldset>
+            <legend>Tipo</legend>
+            <label
+              ><input type="checkbox" name="tipo" value="Aventura" />
+              Aventura</label
+            >
+            <label
+              ><input type="checkbox" name="tipo" value="Naturaleza" />
+              Naturaleza</label
+            >
+            <label
+              ><input type="checkbox" name="tipo" value="Gastronomía" />
+              Gastronomía</label
+            >
+            <label
+              ><input type="checkbox" name="tipo" value="Cultura" />
+              Cultura</label
+            >
+          </fieldset>
+
+          <fieldset>
+            <legend>Accesibilidad</legend>
+            <label
+              ><input type="checkbox" name="accesible" value="1" /> Apto
+              movilidad reducida</label
+            >
+          </fieldset>
+
+          <button type="reset" class="filtros__limpiar">Limpiar filtros</button>
+        </form>
+
+        <section
+          class="resultados"
+          id="resultados"
+          aria-label="Resultados"
+        ></section>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="contenedor">
+        <div class="footer__principal">
+          <div class="footer__marca">
+            <p class="footer__logo">Rumbo</p>
+            <p class="footer__descripcion">
+              Descubrí y reservá escapadas y experiencias por toda Argentina.
+            </p>
+          </div>
+
+          <div class="footer__columnas">
+            <nav aria-label="Explorar">
+              <h2 class="footer__titulo">Explorar</h2>
+              <ul class="footer__lista">
+                <li><a href="explorar.html">Destinos</a></li>
+                <li><a href="explorar.html">Experiencias</a></li>
+                <li><a href="explorar.html?filtro=ofertas">Ofertas</a></li>
+              </ul>
+            </nav>
+
+            <nav aria-label="Empresa">
+              <h2 class="footer__titulo">Empresa</h2>
+              <ul class="footer__lista">
+                <li><a href="#">Sobre Rumbo</a></li>
+                <li><a href="#">Contacto</a></li>
+                <li><a href="#">Ayuda</a></li>
+              </ul>
+            </nav>
+
+            <nav aria-label="Legal">
+              <h2 class="footer__titulo">Legal</h2>
+              <ul class="footer__lista">
+                <li><a href="#">Términos</a></li>
+                <li><a href="#">Privacidad</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+
+        <p class="footer__legal">© 2026 Rumbo · Trabajo académico, UNICEN</p>
+      </div>
+    </footer>
+    <script src="js/iconos.js" defer></script>
+    <script src="js/comunes.js" defer></script>
+    <script src="js/favoritos.js" defer></script>
+    <script src="data/experiencias.js" defer></script>
+    <script src="js/cards.js" defer></script>
+    <script src="js/explorar.js" defer></script>
+  </body>
+</html>
