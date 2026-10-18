@@ -22,9 +22,9 @@ const ICONOS = {
 
   pin: `<svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" focusable="false">
     <path d="M6.3005 10.8995C7.2305 10.0965 10 7.4965 10 5C10 3.93913 9.57857 2.92172 8.82843 2.17157C8.07828 1.42143 7.06087 1 6 1C4.93913 1 3.92172 1.42143 3.17157 2.17157C2.42143 2.92172 2 3.93913 2 5C2 7.4965 4.7695 10.0965 5.6995 10.8995C5.78614 10.9646 5.8916 10.9999 6 10.9999C6.1084 10.9999 6.21386 10.9646 6.3005 10.8995Z"
-          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
     <path d="M6 6.5C6.82843 6.5 7.5 5.82843 7.5 5C7.5 4.17157 6.82843 3.5 6 3.5C5.17157 3.5 4.5 4.17157 4.5 5C4.5 5.82843 5.17157 6.5 6 6.5Z"
-          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
   </svg>`,
 
   usuario: `<svg width="44" height="44" viewBox="0 0 44 44" aria-hidden="true" focusable="false">
@@ -64,7 +64,7 @@ const ICONOS = {
 
   check: `<svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
     <path d="M16.6666 5L7.49992 14.1667L3.33325 10"
-          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
   </svg>`,
 
   idioma: `<svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
@@ -74,7 +74,7 @@ const ICONOS = {
 
   reloj: `<svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
     <path d="M10.0001 5.00008V10.0001L13.3334 11.6667M18.3334 10.0001C18.3334 14.6025 14.6025 18.3334 10.0001 18.3334C5.39771 18.3334 1.66675 14.6025 1.66675 10.0001C1.66675 5.39771 5.39771 1.66675 10.0001 1.66675C14.6025 1.66675 18.3334 5.39771 18.3334 10.0001Z"
-          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
   </svg>`,
   cerrar: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>',
 };

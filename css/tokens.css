@@ -62,15 +62,15 @@
   /* Text styles · Body (Inter) */
   --body-size:    16px;  --body-lh:    1.50;  --body-peso:    var(--peso-regular);
   --small-size:   13px;  --small-lh:   1.30;  --small-peso:   var(--peso-regular);
-  --meta-size:    11px;  --meta-lh:    1.30;  --meta-peso:    var(--peso-regular);
-  --caption-size: 11px;  --caption-lh: 1.30;  --caption-peso: var(--peso-semibold);
+  --meta-size:    12px;  --meta-lh:    1.30;  --meta-peso:    var(--peso-regular);
+  --caption-size: 12px;  --caption-lh: 1.30;  --caption-peso: var(--peso-semibold);
  
   /* Text styles · Label (Inter) */
   --btn-size:      14px;  --btn-lh:      1.20;  --btn-peso:      var(--peso-semibold);
   --input-size:    14px;  --input-lh:    1.30;  --input-peso:    var(--peso-regular);
   --inputcap-size: 12px;  --inputcap-lh: 1.30;  --inputcap-peso: var(--peso-medium);
   --nav-size:      13px;  --nav-lh:      1.20;  --nav-peso:      var(--peso-medium);
-  --tag-size:      10px;  --tag-lh:      1.20;  --tag-peso:      var(--peso-semibold);
+  --tag-size:      12px;  --tag-lh:      1.20;  --tag-peso:      var(--peso-semibold);
  
   /* Radios */
   --radio-m:    8px;

@@ -96,15 +96,30 @@
               />
             </label>
 
-            <label class="buscador__campo">
-              <span class="buscador__etiqueta">Fecha</span>
-              <input
-                class="buscador__input"
-                type="text"
-                name="fecha"
-                placeholder="¿Qué día?"
-              />
-            </label>
+            <div class="buscador__fecha">
+              <label class="buscador__campo">
+                <span class="buscador__etiqueta">Fecha</span>
+                <input
+                  class="buscador__input"
+                  id="fecha-buscador"
+                  type="text"
+                  name="fecha"
+                  placeholder="¿Qué día?"
+                  readonly
+                  autocomplete="off"
+                  aria-haspopup="dialog"
+                  aria-expanded="false"
+                  aria-controls="calendario"
+                />
+              </label>
+              <div
+                class="calendario"
+                id="calendario"
+                role="dialog"
+                aria-label="Elegí una fecha"
+                hidden
+              ></div>
+            </div>
 
             <label class="buscador__campo">
               <span class="buscador__etiqueta">Viajeros</span>
@@ -201,9 +216,9 @@
             <nav aria-label="Explorar">
               <h2 class="footer__titulo">Explorar</h2>
               <ul class="footer__lista">
-                <li><a href="explorar.html">Destinos</a></li>
-                <li><a href="explorar.html">Experiencias</a></li>
                 <li><a href="explorar.html?filtro=ofertas">Ofertas</a></li>
+                <li><a href="explorar.html">Recomendaciones</a></li>
+                <li><a href="explorar.html">Experiencias</a></li>
               </ul>
             </nav>
 
@@ -237,5 +252,7 @@
     <script src="js/cards.js" defer></script>
     <script src="js/carrusel.js" defer></script>
     <script src="js/home.js" defer></script>
+    <script src="js/fechas.js" defer></script>
+    <script src="js/calendario.js" defer></script>
   </body>
 </html>

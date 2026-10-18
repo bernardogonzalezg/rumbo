@@ -245,30 +245,33 @@ main {
 .footer {
   background: var(--color-primary);
   color: var(--blanco);
-  padding-block: var(--esp-5);
+  padding-block: 48px 32px;
 }
 
 .footer__principal {
   display: flex;
   justify-content: space-between;
-  gap: var(--esp-5);
-  padding-bottom: var(--esp-5);
-  border-bottom: 1px solid var(--color-primary-1);
+  align-items: flex-start;
 }
 
 .footer__logo {
   font: var(--texto-h4);
-  margin-bottom: var(--esp-2);
+  margin-bottom: var(--esp-3);
 }
 
 .footer__descripcion {
   font: var(--texto-small);
-  max-width: 280px;
+  max-width: 360px;
 }
 
 .footer__columnas {
   display: flex;
   gap: var(--esp-6);
+  padding-right: 20px;
+}
+
+.footer__columnas > * {
+  width: 200px;
 }
 
 .footer__titulo {
@@ -296,10 +299,11 @@ main {
 }
 
 .footer__legal {
+  margin-top: var(--esp-5); /* 32 */
+  padding-top: var(--esp-5); /* 32 */
+  border-top: 1px solid var(--color-primary-1);
   font: var(--texto-meta);
-  padding-top: var(--esp-4);
 }
-
 /* Foco blanco: el footer es oscuro */
 .footer :focus-visible {
   outline-color: var(--blanco);
@@ -378,7 +382,7 @@ main {
 
 .card__media {
   position: relative;
-  aspect-ratio: 220 / 154;
+  aspect-ratio: 220 / 150;
   border-radius: var(--radio-l);
   overflow: hidden;
   background: var(--color-secundary-1);
@@ -403,12 +407,13 @@ main {
 .card__cuerpo {
   display: flex;
   flex-direction: column;
-  gap: var(--esp-1);
-  padding: 0 10px 10px;              
-  margin-top: var(--esp-2);         
+  gap: var(--esp-2);
+  padding: 0 10px 10px;
+  margin-top: var(--esp-2);
 }
 
 .card__titulo {
+  min-height: 28px;
   font: var(--texto-h5);
 }
 
@@ -547,6 +552,145 @@ main {
   opacity: 1;
 }
 
+/* ----- Selector de fecha del buscador ----- */
+
+.buscador__fecha {
+  position: relative;
+  flex: 1;
+  display: flex;
+  min-width: 0;
+}
+
+.buscador__fecha .buscador__campo {
+  flex: 1;
+}
+
+.buscador__input[readonly] {
+  cursor: pointer;
+}
+
+/* Calendario: 284 de ancho, padding 16, gap 12 */
+.calendario {
+  position: absolute;
+  top: calc(100% + var(--esp-3)); /* justo debajo de la barra del buscador */
+  left: var(--esp-4); /* estimado a ojo del Figma */
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 284px;
+  padding: var(--esp-3);
+  background: var(--blanco);
+  color: var(--texto-principal);
+  border-radius: var(--radio-l);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.calendario[hidden] {
+  display: none;
+}
+
+.calendario h2,
+.calendario p {
+  margin: 0;
+}
+
+/* El hero pone el foco en blanco; acá el fondo es blanco */
+.calendario :focus-visible {
+  outline-color: var(--color-acento);
+}
+
+.calendario__encabezado {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.calendario__titulo {
+  font: var(--texto-h5);
+}
+
+.calendario__flecha {
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.calendario__flecha svg {
+  width: 20px;
+  height: 20px;
+}
+
+.calendario__flecha:disabled {
+  color: var(--borde-input);
+  cursor: not-allowed;
+}
+
+.calendario__ayuda {
+  font: var(--texto-meta);
+  color: var(--texto-secundario);
+  text-align: center;
+}
+
+/* Mes: 252 de ancho = 7 columnas de 36; gap 2 entre filas */
+.calendario__mes {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.calendario__semana,
+.calendario__dias {
+  display: grid;
+  grid-template-columns: repeat(7, 36px);
+  row-gap: 2px;
+}
+
+.calendario__semana span {
+  display: grid;
+  place-items: center;
+  height: 34px;
+  font: var(--texto-btn);
+  color: var(--texto-secundario);
+}
+
+.calendario__dia {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  color: var(--texto-principal);
+  font: var(--texto-body);
+  cursor: pointer;
+}
+
+.calendario__dia:hover:not(:disabled):not(.calendario__dia--elegido) {
+  background: var(--color-secundary-3);
+}
+
+.calendario__dia:disabled {
+  color: var(--texto-secundario);
+  opacity: 0.6;
+  cursor: default;
+}
+
+.calendario__dia--agotado {
+  text-decoration: line-through;
+}
+
+.calendario__dia--elegido {
+  background: var(--color-primary);
+  color: var(--blanco);
+}
 /* ----- Secciones ----- */
 
 .seccion {
@@ -557,7 +701,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: var(--esp-4);
+  margin-bottom: var(--esp-3);
 }
 
 .seccion__titulo {
@@ -574,16 +718,13 @@ main {
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
-  padding: var(--esp-2) var(--esp-3) var(--esp-4);
-  margin: calc(-1 * var(--esp-2)) calc(-1 * var(--esp-3))
-    calc(-1 * var(--esp-4));
-  scroll-padding-inline: var(--esp-3);
+  padding: 10px 0;
   cursor: grab;
 }
 
 .carrusel__controles {
   display: flex;
-  gap: var(--esp-2);
+  gap: 10px;
 }
 
 .carrusel__flecha {
@@ -656,14 +797,14 @@ main {
   left: var(--esp-2);
   display: grid;
   place-items: center;
-  min-width: 64px;                     /* 64 de ancho como piso, crece si el texto lo necesita */
+  min-width: 64px; /* 64 de ancho como piso, crece si el texto lo necesita */
   height: 32px;
-  padding-inline: var(--esp-2);        /* 8: aire a los costados */
+  padding-inline: var(--esp-2); /* 8: aire a los costados */
   border-radius: var(--radio-pill);
-  background: var(--color-secundary);
+  background: var(--color-secundary-n3);
   color: var(--texto-principal);
-  font: var(--texto-btn);              /* Label/Button */
-  white-space: nowrap;                 /* no se parte en dos líneas */
+  font: var(--texto-btn); /* Label/Button */
+  white-space: nowrap; /* no se parte en dos líneas */
 }
 
 .promo__nombre {
@@ -685,6 +826,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-block: 20px;
 }
 
 .explorar__titulo h1 {
@@ -802,11 +944,11 @@ main {
 /* ===== 9. RESERVA ===== */
 
 .pagina-reserva {
-  padding-bottom: 0;                     /* pisa el main { padding-bottom } de la Home */
+  padding-bottom: 0; /* pisa el main { padding-bottom } de la Home */
 }
 
 .pagina-reserva__encabezado {
-  padding-block: var(--esp-5);           /* 32 + título de 44 + 32 = 108 */
+  padding-block: var(--esp-5); /* 32 + título de 44 + 32 = 108 */
 }
 
 .pagina-reserva__encabezado h1 {
@@ -817,7 +959,7 @@ main {
   display: flex;
   align-items: flex-start;
   gap: 48px;
-  padding-bottom: var(--esp-6);          /* 64 */
+  padding-bottom: var(--esp-6); /* 64 */
 }
 
 .pagina-reserva__vacio {
@@ -832,7 +974,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: var(--esp-4);
-  padding: 20px 10px;                    /* estimado: verificar en Figma */
+  padding: 20px 10px; /* estimado: verificar en Figma */
   border: 1px solid var(--borde);
   border-radius: var(--radio-l);
 }
@@ -850,11 +992,11 @@ main {
 .campo {
   display: flex;
   flex-direction: column;
-  gap: var(--esp-1);                     /* 4 */
+  gap: var(--esp-1); /* 4 */
 }
 
 .campo label {
-  font: var(--texto-btn);                /* Label/Button */
+  font: var(--texto-btn); /* Label/Button */
 }
 
 .campo input {
@@ -868,7 +1010,7 @@ main {
 }
 
 .campo input::placeholder {
-  font: var(--texto-inputcap);           /* Label/Input-Caption */
+  font: var(--texto-inputcap); /* Label/Input-Caption */
   color: var(--texto-secundario);
   opacity: 1;
 }
@@ -1030,7 +1172,7 @@ main {
 
 .campo input[aria-invalid="true"] {
   border-color: var(--color-error);
-  box-shadow: inset 0 0 0 1px var(--color-error);   /* engrosa el borde sin mover el layout */
+  box-shadow: inset 0 0 0 1px var(--color-error); /* engrosa el borde sin mover el layout */
 }
 
 /* --- Modales (confirmación y cancelación) --- */
@@ -1038,17 +1180,18 @@ main {
 .modal {
   width: 480px;
   max-width: calc(100% - 2 * var(--esp-3));
-  padding: var(--esp-5);                     /* 32 */
+  padding: var(--esp-5); /* 32 */
   border: 0;
   border-radius: var(--radio-l);
   text-align: center;
 }
 
-.modal[open] {                               /* sin [open], el flex pisaría el display:none del dialog cerrado */
+.modal[open] {
+  /* sin [open], el flex pisaría el display:none del dialog cerrado */
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--esp-3);                         /* 16 */
+  gap: var(--esp-3); /* 16 */
 }
 
 .modal::backdrop {
@@ -1076,7 +1219,7 @@ main {
 }
 
 .modal__check svg {
-  width: 32px;                               /* estimado: ajustar con Figma */
+  width: 32px; /* estimado: ajustar con Figma */
   height: 32px;
 }
 
@@ -1098,7 +1241,7 @@ main {
 }
 
 .modal__detalle {
-  font: var(--texto-h5);                     /* la línea en negrita: título · fecha · personas */
+  font: var(--texto-h5); /* la línea en negrita: título · fecha · personas */
 }
 
 .modal .boton {
@@ -1152,7 +1295,7 @@ main {
 .pestanas button {
   flex: 1;
   padding: 12px var(--esp-3);
-  margin-bottom: -1px;                     /* la línea activa tapa la gris de abajo */
+  margin-bottom: -1px; /* la línea activa tapa la gris de abajo */
   border: 0;
   border-bottom: 2px solid transparent;
   background: none;
@@ -1246,7 +1389,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: var(--esp-2);
-  width: 140px;                            /* estimado: ajustar con la medida de Figma */
+  width: 140px; /* estimado: ajustar con la medida de Figma */
 }
 
 .viaje__acciones .boton {
@@ -1260,6 +1403,14 @@ main {
    ============================================================= */
 
 @media (max-width: 767px) {
+  :root {
+    --input-size: 16px;
+  }
+
+  .ordenar select {
+    font-size: 16px;
+  }
+
   .contenedor {
     padding-inline: var(--esp-4);
   }
@@ -1343,6 +1494,10 @@ main {
     flex-shrink: 0;
   }
 
+  .calendario {
+    left: 0;
+  }
+
   .seccion {
     padding-top: var(--esp-5);
   }
@@ -1393,10 +1548,11 @@ main {
   }
 
   .footer__principal {
-    padding-bottom: var(--esp-2);
+    padding-bottom: 0;
   }
 
   .footer__legal {
+    margin-top: var(--esp-2);
     padding-top: 12px;
   }
 }
@@ -1420,7 +1576,7 @@ main {
 .detalle__encabezado {
   display: flex;
   flex-direction: column;
-  gap: var(--esp-3);                 /* 16 entre migas, título y ubicación */
+  gap: var(--esp-3); /* 16 entre migas, título y ubicación */
   padding-block: 10px;
 }
 
@@ -1464,9 +1620,13 @@ main {
   width: 14px;
   height: 14px;
   vertical-align: -2px;
+  color: var(--color-secundary-n1);
 }
 
-
+.detalle__ubicacion svg,
+.detalle__ubicacion svg path {
+  fill: currentColor;
+}
 
 .detalle__favorito {
   display: grid;
@@ -1513,6 +1673,7 @@ main {
 .detalle__datos svg {
   width: 20px;
   height: 20px;
+  color: var(--color-primary);
 }
 
 /* --- Galería: 380 de alto. Foto grande (636) y cuatro chicas (314 × 186) --- */
@@ -1520,12 +1681,10 @@ main {
 .detalle__galeria {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  grid-template-rows: minmax(
-    0,
-    1fr
-  ); /* ← nueva: la fila no crece más que los 380 */
+  grid-template-rows: minmax(0, 1fr);
   gap: var(--esp-2);
-  height: 380px;
+  height: 405px; /* 385 de fotos + 10 de padding arriba y abajo */
+  padding-block: 10px;
 }
 
 .detalle__galeria img {
