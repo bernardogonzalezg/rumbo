@@ -225,6 +225,19 @@ main {
   background: var(--borde);
 }
 
+.header__usuario {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+}
+
+.header__usuario svg {
+  width: 32px;
+  height: 32px;
+}
+
 /* =============================================================
    3. FOOTER
    ============================================================= */
@@ -391,7 +404,8 @@ main {
   display: flex;
   flex-direction: column;
   gap: var(--esp-1);
-  padding-top: var(--esp-2);
+  padding: 0 10px 10px;              
+  margin-top: var(--esp-2);         
 }
 
 .card__titulo {
@@ -640,11 +654,16 @@ main {
 .promo__descuento {
   top: var(--esp-2);
   left: var(--esp-2);
-  padding: 2px var(--esp-2);
+  display: grid;
+  place-items: center;
+  min-width: 64px;                     /* 64 de ancho como piso, crece si el texto lo necesita */
+  height: 32px;
+  padding-inline: var(--esp-2);        /* 8: aire a los costados */
   border-radius: var(--radio-pill);
   background: var(--color-secundary);
   color: var(--texto-principal);
-  font: var(--texto-tag);
+  font: var(--texto-btn);              /* Label/Button */
+  white-space: nowrap;                 /* no se parte en dos líneas */
 }
 
 .promo__nombre {
@@ -1250,15 +1269,15 @@ main {
   }
 
   .header__usuario svg {
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
   }
 
   .header__usuario {
     display: grid;
     place-items: center;
-    width: 44px; /* área táctil de 44 × 44 */
-    height: 44px;
+    width: 24px; /* área táctil de 44 × 44 */
+    height: 24px;
   }
 
   /* Header de 64 de alto: solo logo y usuario */
@@ -1398,6 +1417,13 @@ main {
   padding-block: var(--esp-5);
 }
 
+.detalle__encabezado {
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-3);                 /* 16 entre migas, título y ubicación */
+  padding-block: 10px;
+}
+
 .detalle__titulo {
   display: flex;
   justify-content: space-between;
@@ -1414,7 +1440,7 @@ main {
 
 .migas li + li::before {
   content: "·";
-  margin-inline: var(--esp-1);
+  margin-inline: var(--esp-2);
 }
 
 .migas a {
@@ -1439,6 +1465,8 @@ main {
   height: 14px;
   vertical-align: -2px;
 }
+
+
 
 .detalle__favorito {
   display: grid;

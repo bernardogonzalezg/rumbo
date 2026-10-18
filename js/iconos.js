@@ -69,7 +69,7 @@ const ICONOS = {
 
   idioma: `<svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
     <path d="M4.16675 6.66675L6.25008 8.75008M6.25008 8.75008L9.16675 11.6667M6.25008 8.75008L3.33341 11.6667M6.25008 8.75008L8.33341 6.66675L10.0001 4.16675M10.0001 4.16675H1.66675M10.0001 4.16675H11.6667M5.83341 1.66675H6.66675M11.6667 15.0001L14.1667 10.0001L16.6667 15.0001L18.3334 18.3334M16.6667 15.0001H11.6667M11.6667 15.0001L10.0001 18.3334"
-          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
   </svg>`,
 
   reloj: `<svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false">

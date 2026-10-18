@@ -211,13 +211,26 @@
         <p class="footer__legal">© 2026 Rumbo · Trabajo académico, UNICEN</p>
       </div>
     </footer>
-<dialog class="modal" id="modal-cancelar" aria-labelledby="cancelar-titulo" aria-describedby="cancelar-texto">
-  <div class="modal__check modal__check--error" data-icono="cerrar" aria-hidden="true"></div>
-  <h2 id="cancelar-titulo">¿Cancelar esta reserva?</h2>
-  <p class="modal__detalle" id="cancelar-texto"></p>
-  <button type="button" class="boton boton--peligro" id="cancelar-si">Sí, cancelar reserva</button>
-  <button type="button" class="boton boton--secundario" id="cancelar-no">No, mantener</button>
-</dialog>
+    <dialog
+      class="modal"
+      id="modal-cancelar"
+      aria-labelledby="cancelar-titulo"
+      aria-describedby="cancelar-texto"
+    >
+      <div
+        class="modal__check modal__check--error"
+        data-icono="cerrar"
+        aria-hidden="true"
+      ></div>
+      <h2 id="cancelar-titulo">¿Cancelar esta reserva?</h2>
+      <p class="modal__detalle" id="cancelar-texto"></p>
+      <button type="button" class="boton boton--peligro" id="cancelar-si">
+        Sí, cancelar reserva
+      </button>
+      <button type="button" class="boton boton--secundario" id="cancelar-no">
+        No, mantener
+      </button>
+    </dialog>
     <script src="js/iconos.js" defer></script>
     <script src="js/comunes.js" defer></script>
     <script src="data/experiencias.js" defer></script>
