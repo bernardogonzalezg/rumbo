@@ -1,4 +1,4 @@
-const PESTANAS = ["guardados", "proximos", "preferencias", "notificaciones"];
+const PESTANAS = ["guardados", "proximos", "notificaciones", "preferencias"];
 const botonesPestana = [...document.querySelectorAll('[role="tab"]')];
 
 /* ---------- Pestañas ---------- */
@@ -148,6 +148,20 @@ document.getElementById("cancelar-si").addEventListener("click", () => {
   modalCancelar.close();
   mostrarProximos();
   document.getElementById("panel-proximos").focus();   // el botón que se usó ya no existe: el foco va al panel
+});
+
+// Preferencias: maqueta visual, no guarda nada. Solo da feedback al apretar el botón.
+const formularioPreferencias = document.querySelector("#form-preferencias");
+const mensajeGuardado = document.querySelector("#preferencias-guardado");
+
+formularioPreferencias.addEventListener("submit", (evento) => {
+  evento.preventDefault();
+  mensajeGuardado.textContent = "Preferencias guardadas";
+});
+
+// Si cambia algo después de guardar, el aviso deja de ser cierto
+formularioPreferencias.addEventListener("change", () => {
+  mensajeGuardado.textContent = "";
 });
 
 /* ---------- Arranque (siempre al final) ---------- */

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>City tour por Tandil · Rumbo</title>
+    <title>Mi cuenta · Rumbo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -105,6 +105,17 @@
           >
             Próximos viajes
           </button>
+                    <button
+            type="button"
+            role="tab"
+            id="tab-notificaciones"
+            data-tab="notificaciones"
+            aria-controls="panel-notificaciones"
+            aria-selected="false"
+            tabindex="-1"
+          >
+            Notificaciones
+          </button>
           <button
             type="button"
             role="tab"
@@ -115,17 +126,6 @@
             tabindex="-1"
           >
             Preferencias
-          </button>
-          <button
-            type="button"
-            role="tab"
-            id="tab-notificaciones"
-            data-tab="notificaciones"
-            aria-controls="panel-notificaciones"
-            aria-selected="false"
-            tabindex="-1"
-          >
-            Notificaciones
           </button>
         </div>
 
@@ -155,17 +155,210 @@
           tabindex="0"
           hidden
         >
-          <p>Próximamente.</p>
+          <form class="preferencias" id="form-preferencias">
+            <fieldset class="pregunta" aria-describedby="ayuda-destino">
+              <legend>¿Qué tipo de destino preferís?</legend>
+              <p class="pregunta__ayuda" id="ayuda-destino">
+                Podés elegir más de uno
+              </p>
+              <div class="chips">
+                <label class="chip"
+                  ><input
+                    class="chip__input"
+                    type="checkbox"
+                    name="destino"
+                    value="playa"
+                  /><span>Playa</span></label
+                >
+                <label class="chip"
+                  ><input
+                    class="chip__input"
+                    type="checkbox"
+                    name="destino"
+                    value="montania"
+                  /><span>Montaña</span></label
+                >
+                <label class="chip"
+                  ><input
+                    class="chip__input"
+                    type="checkbox"
+                    name="destino"
+                    value="sierras"
+                  /><span>Sierras</span></label
+                >
+                <label class="chip"
+                  ><input
+                    class="chip__input"
+                    type="checkbox"
+                    name="destino"
+                    value="ciudad"
+                  /><span>Ciudad</span></label
+                >
+                <label class="chip"
+                  ><input
+                    class="chip__input"
+                    type="checkbox"
+                    name="destino"
+                    value="lagos"
+                  /><span>Lagos y ríos</span></label
+                >
+                <label class="chip"
+                  ><input
+                    class="chip__input"
+                    type="checkbox"
+                    name="destino"
+                    value="patagonia"
+                  /><span>Patagonia</span></label
+                >
+              </div>
+            </fieldset>
+
+            <fieldset class="pregunta" aria-describedby="ayuda-presupuesto">
+              <legend>¿Cuánto querés gastar por persona?</legend>
+              <p class="pregunta__ayuda" id="ayuda-presupuesto">
+                Elegí un rango
+              </p>
+              <div class="chips">
+                <label class="chip"
+                  ><input
+                    class="chip__input"
+                    type="radio"
+                    name="presupuesto"
+                    value="hasta-100"
+                  /><span>Hasta $100.000</span></label
+                >
+                <label class="chip"
+                  ><input
+                    class="chip__input"
+                    type="radio"
+                    name="presupuesto"
+                    value="100-200"
+                  /><span>$100.000 a $200.000</span></label
+                >
+                <label class="chip"
+                  ><input
+                    class="chip__input"
+                    type="radio"
+                    name="presupuesto"
+                    value="200-400"
+                  /><span>$200.000 a $400.000</span></label
+                >
+                <label class="chip"
+                  ><input
+                    class="chip__input"
+                    type="radio"
+                    name="presupuesto"
+                    value="mas-400"
+                  /><span>Más de $400.000</span></label
+                >
+              </div>
+            </fieldset>
+
+            <div class="preferencias__acciones">
+              <button class="boton boton--primario boton--chico" type="submit">
+                Guardar preferencias
+              </button>
+              <p class="guardado" id="preferencias-guardado" role="status"></p>
+            </div>
+          </form>
         </section>
 
-        <section
+                <section
           role="tabpanel"
           id="panel-notificaciones"
           aria-labelledby="tab-notificaciones"
           tabindex="0"
           hidden
         >
-          <p>Próximamente.</p>
+          <ul class="notificaciones">
+            <li class="notificacion">
+              <div>
+                <label class="notificacion__titulo" for="notif-confirmacion"
+                  >Confirmación de reserva</label
+                >
+                <p id="notif-confirmacion-desc">
+                  Te enviamos un email con los detalles apenas confirmás tu
+                  viaje.
+                </p>
+              </div>
+              <span class="interruptor">
+                <input
+                  class="interruptor__input"
+                  type="checkbox"
+                  role="switch"
+                  id="notif-confirmacion"
+                  aria-describedby="notif-confirmacion-desc"
+                  checked
+                />
+                <span class="interruptor__pista" aria-hidden="true"></span>
+              </span>
+            </li>
+
+            <li class="notificacion">
+              <div>
+                <label class="notificacion__titulo" for="notif-recordatorio"
+                  >Recordatorio antes del viaje</label
+                >
+                <p id="notif-recordatorio-desc">
+                  Un aviso el día anterior para que no se te pase la salida.
+                </p>
+              </div>
+              <span class="interruptor">
+                <input
+                  class="interruptor__input"
+                  type="checkbox"
+                  role="switch"
+                  id="notif-recordatorio"
+                  aria-describedby="notif-recordatorio-desc"
+                  checked
+                />
+                <span class="interruptor__pista" aria-hidden="true"></span>
+              </span>
+            </li>
+
+            <li class="notificacion">
+              <div>
+                <label class="notificacion__titulo" for="notif-guardados"
+                  >Novedades de tus viajes guardados</label
+                >
+                <p id="notif-guardados-desc">
+                  Te avisamos si hay nuevas fechas o cambios en las experiencias
+                  que guardaste.
+                </p>
+              </div>
+              <span class="interruptor">
+                <input
+                  class="interruptor__input"
+                  type="checkbox"
+                  role="switch"
+                  id="notif-guardados"
+                  aria-describedby="notif-guardados-desc"
+                />
+                <span class="interruptor__pista" aria-hidden="true"></span>
+              </span>
+            </li>
+
+            <li class="notificacion">
+              <div>
+                <label class="notificacion__titulo" for="notif-ofertas"
+                  >Ofertas y promociones</label
+                >
+                <p id="notif-ofertas-desc">
+                  Descuentos de temporada y experiencias con lugares limitados.
+                </p>
+              </div>
+              <span class="interruptor">
+                <input
+                  class="interruptor__input"
+                  type="checkbox"
+                  role="switch"
+                  id="notif-ofertas"
+                  aria-describedby="notif-ofertas-desc"
+                />
+                <span class="interruptor__pista" aria-hidden="true"></span>
+              </span>
+            </li>
+          </ul>
         </section>
       </div>
     </main>
