@@ -19,9 +19,9 @@
         <a href="index.html" class="header__logo">Rumbo</a>
 
         <nav class="header__nav" aria-label="Principal">
-          <a href="explorar.html?filtro=ofertas">Ofertas</a>
-          <a href="explorar.html?orden=recomendados">Recomendaciones</a>
-          <a href="explorar.html">Experiencias</a>
+          <a href="index.html#experiencias">Experiencias</a>
+          <a href="index.html#recomendaciones">Recomendaciones</a>
+          <a href="index.html#promociones">Promociones</a>
         </nav>
 
         <div class="header__acciones">
@@ -103,7 +103,6 @@
                   class="buscador__input"
                   id="fecha-buscador"
                   type="text"
-                  name="fecha"
                   placeholder="¿Qué día?"
                   readonly
                   autocomplete="off"
@@ -112,6 +111,7 @@
                   aria-controls="calendario"
                 />
               </label>
+              <input type="hidden" name="fecha" id="fecha-iso" />
               <div
                 class="calendario"
                 id="calendario"
@@ -137,6 +137,37 @@
 
       <section
         class="seccion"
+        id="experiencias"
+        aria-labelledby="titulo-destacadas"
+        data-carrusel
+      >
+        <div class="contenedor">
+          <div class="seccion__encabezado">
+            <h3 id="titulo-destacadas">Experiencias destacadas</h3>
+            <div class="carrusel__controles">
+              <button
+                class="carrusel__flecha"
+                type="button"
+                data-direccion="-1"
+                data-icono="flechaIzq"
+                aria-label="Anterior"
+              ></button>
+              <button
+                class="carrusel__flecha"
+                type="button"
+                data-direccion="1"
+                data-icono="flechaDer"
+                aria-label="Siguiente"
+              ></button>
+            </div>
+          </div>
+          <div class="carrusel" data-lista="destacadas"></div>
+        </div>
+      </section>
+
+      <section
+        class="seccion"
+        id="recomendaciones"
         aria-labelledby="titulo-recomendaciones"
         data-carrusel
       >
@@ -166,34 +197,9 @@
 
       <section
         class="seccion"
-        aria-labelledby="titulo-destacadas"
-        data-carrusel
+        id="promociones"
+        aria-labelledby="titulo-promociones"
       >
-        <div class="contenedor">
-          <div class="seccion__encabezado">
-            <h3 id="titulo-destacadas">Experiencias destacadas</h3>
-            <div class="carrusel__controles">
-              <button
-                class="carrusel__flecha"
-                type="button"
-                data-direccion="-1"
-                data-icono="flechaIzq"
-                aria-label="Anterior"
-              ></button>
-              <button
-                class="carrusel__flecha"
-                type="button"
-                data-direccion="1"
-                data-icono="flechaDer"
-                aria-label="Siguiente"
-              ></button>
-            </div>
-          </div>
-          <div class="carrusel" data-lista="destacadas"></div>
-        </div>
-      </section>
-
-      <section class="seccion" aria-labelledby="titulo-promociones">
         <div class="contenedor">
           <h3 id="titulo-promociones" class="seccion__titulo">
             Promociones de Temporada
@@ -216,9 +222,11 @@
             <nav aria-label="Explorar">
               <h2 class="footer__titulo">Explorar</h2>
               <ul class="footer__lista">
-                <li><a href="explorar.html?filtro=ofertas">Ofertas</a></li>
-                <li><a href="explorar.html">Recomendaciones</a></li>
-                <li><a href="explorar.html">Experiencias</a></li>
+                <li><a href="index.html#experiencias">Experiencias</a></li>
+                <li>
+                  <a href="index.html#recomendaciones">Recomendaciones</a>
+                </li>
+                <li><a href="index.html#promociones">Promociones</a></li>
               </ul>
             </nav>
 

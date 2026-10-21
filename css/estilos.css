@@ -245,7 +245,7 @@ main {
 .footer {
   background: var(--color-primary);
   color: var(--blanco);
-  padding-block: 48px 32px;
+  padding-block: var(--esp-6) 32px;
 }
 
 .footer__principal {
@@ -855,7 +855,7 @@ main {
 .explorar__fila {
   display: flex;
   align-items: flex-start;
-  gap: 48px;
+  gap: var(--esp-6);
 }
 
 .resultados__vacio {
@@ -893,7 +893,7 @@ main {
   align-items: center;
   gap: var(--esp-2);
   min-height: 24px;
-  font: var(--texto-small);
+  font: var(--texto-input);
 }
 
 .filtros input[type="checkbox"] {
@@ -952,13 +952,13 @@ main {
 }
 
 .pagina-reserva__encabezado h1 {
-  font: var(--texto-h2);
+  font: var(--texto-h1);
 }
 
 .pagina-reserva__columnas {
   display: flex;
   align-items: flex-start;
-  gap: 48px;
+  gap: var(--esp-6);
   padding-bottom: var(--esp-6); /* 64 */
 }
 
@@ -980,7 +980,7 @@ main {
 }
 
 .formulario h2 {
-  font: var(--texto-h3);
+  font: var(--texto-h2);
 }
 
 .formulario__fila {
@@ -1299,7 +1299,7 @@ main {
   border: 0;
   border-bottom: 2px solid transparent;
   background: none;
-  font: var(--texto-small);
+  font: var(--texto-body);
   color: var(--texto-secundario);
   cursor: pointer;
 }
@@ -1380,7 +1380,7 @@ main {
   align-self: flex-start;
   padding: 2px var(--esp-2);
   border-radius: 999px;
-  background: color-mix(in srgb, var(--color-primary) 30%, white);
+  background: var(--color-primary-3);
   color: var(--texto-principal);
   font: var(--texto-meta);
 }
@@ -1403,7 +1403,7 @@ main {
 .preferencias {
   display: flex;
   flex-direction: column;
-  gap: 48px; /* entre preguntas y botón (medido sobre el Figma) */
+  gap: var(--esp-6);
 }
 
 .pregunta {
@@ -1792,7 +1792,7 @@ main {
   margin: 0;
   padding: 0;
   list-style: none;
-  font: var(--texto-meta);
+  font: var(--texto-body);
 }
 
 .migas li + li::before {
@@ -1810,7 +1810,7 @@ main {
 }
 
 .detalle__titulo h1 {
-  font: var(--texto-h2);
+  font: var(--texto-h1);
 }
 
 .detalle__ubicacion {
@@ -1907,7 +1907,7 @@ main {
 
 .detalle__columnas {
   display: flex;
-  gap: 48px;
+  gap: var(--esp-6);
   padding-top: var(--esp-5); /* 32 de respiro debajo de la galería */
   padding-bottom: var(--esp-6); /* 64 */
 }
@@ -1915,7 +1915,7 @@ main {
 .detalle__info {
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: var(--esp-5);
   flex: 0 0 820px;
   min-width: 0;
 }
@@ -2021,7 +2021,7 @@ main {
 /* Línea divisoria arriba de cada sección menos la primera:
    48 de espacio arriba (el gap) + línea + 48 de padding abajo */
 .detalle__seccion + .detalle__seccion {
-  padding-top: 48px;
+  padding-top: var(--esp-6);
   border-top: 1px solid var(--borde);
 }
 

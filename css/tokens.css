@@ -83,7 +83,8 @@
   --esp-3: 16px;
   --esp-4: 24px;
   --esp-5: 32px;
-  --esp-6: 64px;
+  --esp-6: 48px;
+  --esp-7: 64px;
  
   /* Layout */
   --ancho-contenido: 1280px;

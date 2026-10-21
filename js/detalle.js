@@ -108,22 +108,35 @@ function activarReserva(exp) {
   const error = document.getElementById("reserva-error");
   let elegida = null;
 
-  // "Elegir" en una salida: completa la fecha de la tarjeta
-  document.getElementById("salidas").addEventListener("click", (evento) => {
-    const boton = evento.target.closest("[data-salida]");
-    if (!boton) return;
-
-    elegida = Number(boton.dataset.salida);
-    campoFecha.value = textoCorto(exp.salidas[elegida]);
-    campoSalida.value = elegida;
+  function elegirSalida(i) {
+    elegida = i;
+    campoFecha.value = textoCorto(exp.salidas[i]);
+    campoSalida.value = i;
     error.hidden = true;
 
     document.querySelectorAll("[data-salida]").forEach((b) => {
-      const esLaElegida = Number(b.dataset.salida) === elegida;
+      const esLaElegida = Number(b.dataset.salida) === i;
       b.textContent = esLaElegida ? "Elegida" : "Elegir";
       b.closest(".salida").classList.toggle("salida--elegida", esLaElegida);
     });
+  }
+
+  // "Elegir" en una salida: completa la fecha de la tarjeta
+  document.getElementById("salidas").addEventListener("click", (evento) => {
+    const boton = evento.target.closest("[data-salida]");
+    if (boton) elegirSalida(Number(boton.dataset.salida));
   });
+
+  // Si llega de la búsqueda, el cuadro de reserva ya viene completo
+  const fechaBuscada = params.get("fecha");
+  const viajeros = Number.parseInt(params.get("viajeros"), 10);
+  if (viajeros >= 1) formulario.elements.personas.value = viajeros;
+  if (fechaBuscada) {
+    const i = exp.salidas.findIndex(
+      (s) => s.fecha === fechaBuscada && s.cupos >= (viajeros || 1)
+    );
+    if (i !== -1) elegirSalida(i);
+  }
 
   // Hacer clic en el campo de fecha lleva a las salidas
   campoFecha.addEventListener("click", () => {

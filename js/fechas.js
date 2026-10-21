@@ -24,3 +24,10 @@ function textoCupos(cupos) {
   if (cupos === 0) return "Sin cupo";
   return cupos === 1 ? "Queda 1 lugar" : `Quedan ${cupos} lugares`;
 }
+
+// "2026-10-27" -> "Mar 27 oct"
+function textoFechaCorta(iso) {
+  const [anio, mes, dia] = iso.split("-").map(Number);
+  const fecha = new Date(anio, mes - 1, dia);
+  return `${mayuscula(DIAS[fecha.getDay()]).slice(0, 3)} ${dia} ${MESES[mes - 1].slice(0, 3)}`;
+}

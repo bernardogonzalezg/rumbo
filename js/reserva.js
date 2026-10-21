@@ -17,7 +17,7 @@ function iniciar() {
   document.getElementById("r-fecha").textContent = textoSalida(salida);
   document.getElementById("r-cambiar").href = `detalle.html?id=${experiencia.id}#seccion-salidas`;
   document.getElementById("r-cancelacion").textContent = experiencia.cancelacionGratis
-    ? "Cancelación gratis hasta 24 h antes"
+    ? "Cancelación gratis hasta 24 horas antes"
     : "Cancelación con cargo";
 
   document.getElementById("menos").addEventListener("click", () => { personas--; actualizarResumen(); });

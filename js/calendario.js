@@ -97,6 +97,7 @@ function cerrar(devolverFoco) {
 
 function elegir(iso) {
   fechaElegida = iso;
+  document.getElementById("fecha-iso").value = iso;
   const f = new Date(`${iso}T00:00:00`);
   // Lo que se muestra y lo que viaja a Explorar: "Mar 27 oct"
   campoFecha.value = `${mayuscula(DIAS[f.getDay()].slice(0, 3))} ${f.getDate()} ${MESES[f.getMonth()].slice(0, 3)}`;

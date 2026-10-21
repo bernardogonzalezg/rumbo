@@ -4,10 +4,11 @@ function formatearPrecio(numero) {
 }
 
 // Devuelve el HTML de una card a partir de una experiencia
-function crearCard(exp) {
+function crearCard(exp, contexto) {
+  const extra = typeof contexto === "string" ? contexto : "";
   return `
     <article class="card">
-      <a href="detalle.html?id=${exp.id}" class="card__enlace">
+      <a href="detalle.html?id=${exp.id}${extra}" class="card__enlace">
         <div class="card__media">
           <img src="img/${exp.imagen}" alt="${exp.alt}">
           ${exp.popular ? '<span class="card__etiqueta">Popular</span>' : ""}
