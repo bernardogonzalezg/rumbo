@@ -1604,13 +1604,6 @@ main {
    ============================================================= */
 
 @media (max-width: 767px) {
-  :root {
-    --input-size: 16px;
-  }
-
-  .ordenar select {
-    font-size: 16px;
-  }
 
   .contenedor {
     padding-inline: var(--esp-4);
@@ -1628,7 +1621,7 @@ main {
   .header__usuario {
     display: grid;
     place-items: center;
-    width: 24px; /* área táctil de 44 × 44 */
+    width: 24px;
     height: 24px;
   }
 
@@ -1646,25 +1639,25 @@ main {
   .menu-cuenta {
     width: 200px;
     padding: var(--esp-2); /* 8 */
-    top: calc(100% + 10px); /* (64 del header − 44 del botón) / 2 */
   }
 
-  .menu-cuenta a {
-    min-height: 32px;
-    gap: var(--esp-2); /* 8, a confirmar en Figma */
-    padding: 0 var(--esp-2); /* 8, a confirmar en Figma */
-  }
+.menu-cuenta a {
+  min-height: 32px;
+  gap: var(--esp-2);
+  font: var(--texto-tag);
+}
 
   .menu-cuenta__separador {
     margin: var(--esp-1) var(--esp-2); /* 4 arriba/abajo, 8 a los lados */
   }
 
-  /* Hero de 600 de alto */
   .hero {
-    min-height: 600px;
-    padding-top: var(--esp-3);
-    padding-bottom: var(--esp-4);
-    gap: var(--esp-5); /* el gap de 32 entre el título y el buscador */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: var(--esp-3);
+    min-height: 450px;
+    padding-block: var(--esp-4);
   }
 
   .hero h1 {
@@ -1685,14 +1678,12 @@ main {
 
   .buscador__campo {
     height: 47px;
-    padding-block: 0;
-    justify-content: center;
+    padding: 6px 12px;
+    gap: 0;
   }
+
   .buscador .boton {
-    width: 100%;
-    height: 47px;
-    padding-block: 0;
-    flex-shrink: 0;
+    height: 50px;
   }
 
   .calendario {
