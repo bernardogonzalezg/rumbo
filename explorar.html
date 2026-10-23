@@ -80,6 +80,59 @@
       </div>
     </header>
     <main class="contenedor explorar">
+      <form
+        class="buscador buscador--compacto"
+        action="explorar.html"
+        method="get"
+        aria-label="Modificar búsqueda"
+      >
+        <label class="buscador__campo">
+          <span class="buscador__etiqueta">Destino</span>
+          <input
+            class="buscador__input"
+            type="text"
+            name="destino"
+            placeholder="¿A qué lugar?"
+          />
+        </label>
+
+        <div class="buscador__fecha">
+          <label class="buscador__campo">
+            <span class="buscador__etiqueta">Fecha</span>
+            <input
+              class="buscador__input"
+              id="fecha-buscador"
+              type="text"
+              role="combobox"
+              placeholder="¿Qué día?"
+              readonly
+              autocomplete="off"
+              aria-haspopup="dialog"
+              aria-expanded="false"
+              aria-controls="calendario"
+            />
+          </label>
+          <input type="hidden" name="fecha" id="fecha-iso" />
+          <div
+            class="calendario"
+            id="calendario"
+            role="dialog"
+            aria-label="Elegí una fecha"
+            hidden
+          ></div>
+        </div>
+
+        <label class="buscador__campo">
+          <span class="buscador__etiqueta">Personas</span>
+          <input
+            class="buscador__input"
+            type="text"
+            name="viajeros"
+            placeholder="¿Cuántas personas?"
+          />
+        </label>
+        <button type="submit" class="boton boton--primario">Buscar</button>
+      </form>
       <div class="explorar__titulo">
         <div>
           <h1>Experiencias en Tandil</h1>
@@ -231,6 +284,7 @@
     <script src="data/experiencias.js" defer></script>
     <script src="js/cards.js" defer></script>
     <script src="js/fechas.js" defer></script>
+    <script src="js/calendario.js" defer></script>
     <script src="js/explorar.js" defer></script>
   </body>
 </html>

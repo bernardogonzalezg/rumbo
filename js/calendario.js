@@ -95,17 +95,24 @@ function cerrar(devolverFoco) {
   if (devolverFoco) campoFecha.focus();
 }
 
-function elegir(iso) {
+// Escribe la fecha en el campo y la guarda. No abre ni cierra el calendario.
+function mostrarFecha(iso) {
   fechaElegida = iso;
   document.getElementById("fecha-iso").value = iso;
   const f = new Date(`${iso}T00:00:00`);
-  // Lo que se muestra y lo que viaja a Explorar: "Mar 27 oct"
   campoFecha.value = `${mayuscula(DIAS[f.getDay()].slice(0, 3))} ${f.getDate()} ${MESES[f.getMonth()].slice(0, 3)}`;
   campoFecha.dataset.fecha = iso;
+}
+
+function elegir(iso) {
+  mostrarFecha(iso);
   cerrar(true);
 }
 
-/* ---------- Eventos ---------- */
+// Si la página llega con ?fecha=..., el campo aparece ya completo (Explorar)
+const fechaUrl = new URLSearchParams(location.search).get("fecha");
+if (/^\d{4}-\d{2}-\d{2}$/.test(fechaUrl)) mostrarFecha(fechaUrl);
+
 
 campoFecha.addEventListener("click", () => (calendario.hidden ? abrir() : cerrar(false)));
 

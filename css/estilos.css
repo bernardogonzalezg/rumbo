@@ -420,8 +420,8 @@ main {
 .card__titulo {
   min-height: 28px;
   font: var(--texto-h5);
-  white-space: nowrap;      
-  overflow: hidden;         
+  white-space: nowrap;
+  overflow: hidden;
   text-overflow: ellipsis;
 }
 
@@ -481,8 +481,8 @@ main {
 
 .hero {
   min-height: 480px;
-  padding-top: 130px;
-  padding-bottom: 58px;
+  padding-block: 80px;
+  gap: 12px;
   color: var(--blanco);
   display: flex;
   flex-direction: column;
@@ -495,7 +495,10 @@ main {
       rgba(0, 0, 0, 0.4) 50%,
       rgba(0, 0, 0, 0.1) 100%
     ),
-    url("../img/hero-quebrada.jpg") center / cover no-repeat;
+    url("../img/hero-desktop.jpg") center / cover no-repeat;
+  background-position:
+    0 0,
+    center 100%;
 }
 
 .hero h1 {
@@ -503,7 +506,7 @@ main {
 }
 
 .hero__subtitulo {
-  margin-top: 10px;
+  margin-top: 12px;
   font: var(--texto-h3);
 }
 
@@ -535,8 +538,8 @@ main {
 }
 
 .buscador__campo:focus-within {
-  outline: 2px solid var(--color-acento);
-  outline-offset: 2px;
+  outline: 2px solid var(--color-primary);
+  outline-offset: 0px;
 }
 
 .buscador__etiqueta {
@@ -695,6 +698,20 @@ main {
 .calendario__dia--elegido {
   background: var(--color-primary);
   color: var(--blanco);
+}
+
+/* Variante compacta (Explorar): mismo buscador, menos espacio */
+.buscador--compacto {
+  gap: var(--esp-2); /* 8 */
+  padding: var(--esp-2);
+}
+
+.buscador--compacto .buscador__campo {
+  padding: 8px 14px;
+}
+
+.buscador--compacto .boton {
+  padding: 12px var(--esp-4); /* 12 y 24 */
 }
 
 /* ----- Secciones ----- */
@@ -1072,7 +1089,7 @@ main {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-template-rows: minmax(0, 1fr);
   gap: var(--esp-2);
-  height: 405px; 
+  height: 405px;
   padding-block: 10px;
 }
 
@@ -1096,7 +1113,7 @@ main {
 .detalle__columnas {
   display: flex;
   gap: var(--esp-6);
-  padding-top: var(--esp-5); 
+  padding-top: var(--esp-5);
   padding-bottom: var(--esp-6);
 }
 
@@ -1203,7 +1220,7 @@ main {
   display: flex;
   flex-direction: column;
   padding-top: 16px;
-  gap: var(--esp-3); 
+  gap: var(--esp-3);
 }
 
 /* Línea divisoria arriba de cada sección menos la primera:
@@ -1283,7 +1300,7 @@ main {
 }
 
 .boton--secundario:focus-visible {
-  outline: 2px solid var(--color-acento); 
+  outline: 2px solid var(--color-acento);
   outline-offset: 2px;
 }
 
@@ -1362,7 +1379,7 @@ main {
 
 .opinion__valoracion {
   font: var(--texto-meta);
-  line-height: 20px; 
+  line-height: 20px;
   color: var(--texto-secundario);
 }
 
@@ -1493,7 +1510,7 @@ main {
 }
 
 .campo input::placeholder {
-  font: var(--texto-inputcap); 
+  font: var(--texto-inputcap);
   color: var(--texto-secundario);
   opacity: 1;
 }
@@ -1702,7 +1719,7 @@ main {
 }
 
 .modal__check svg {
-  width: 32px; 
+  width: 32px;
   height: 32px;
 }
 
@@ -1724,7 +1741,7 @@ main {
 }
 
 .modal__detalle {
-  font: var(--texto-h5); 
+  font: var(--texto-h5);
 }
 
 .modal .boton {
@@ -1748,6 +1765,14 @@ main {
 .boton--peligro:focus-visible {
   outline: 2px solid var(--texto-principal);
   outline-offset: 2px;
+}
+
+.campo input:focus-visible:not([aria-invalid="true"]),
+.reserva__campo input:focus-visible,
+.filtros__precio input:focus-visible {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: inset 0 0 0 1px var(--color-primary); /* borde de 2 px sin mover el diseño */
 }
 
 /* =============================================================
@@ -1874,7 +1899,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: var(--esp-2);
-  width: 140px; 
+  width: 140px;
 }
 
 .viaje__acciones .boton {
@@ -1899,13 +1924,13 @@ main {
 }
 
 .pregunta legend {
-  margin-bottom: var(--esp-2); 
+  margin-bottom: var(--esp-2);
   padding: 0;
   font: var(--texto-h4);
 }
 
 .pregunta__ayuda {
-  margin: 0 0 var(--esp-2); 
+  margin: 0 0 var(--esp-2);
   font: var(--texto-small);
   color: var(--texto-secundario);
 }
@@ -1913,7 +1938,7 @@ main {
 .chips {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--esp-2); 
+  gap: var(--esp-2);
 }
 
 .chip {
@@ -1973,7 +1998,7 @@ main {
 .preferencias__acciones {
   display: flex;
   align-items: center;
-  gap: var(--esp-5); 
+  gap: var(--esp-5);
 }
 
 .guardado {
