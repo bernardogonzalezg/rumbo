@@ -129,11 +129,11 @@ function activarReserva(exp) {
 
   // Si llega de la búsqueda, el cuadro de reserva ya viene completo
   const fechaBuscada = params.get("fecha");
-  const viajeros = Number.parseInt(params.get("viajeros"), 10);
-  if (viajeros >= 1) formulario.elements.personas.value = viajeros;
+  const personas = Number.parseInt(params.get("personas"), 10);
+  if (personas >= 1) formulario.elements.personas.value = personas;
   if (fechaBuscada) {
     const i = exp.salidas.findIndex(
-      (s) => s.fecha === fechaBuscada && s.cupos >= (viajeros || 1)
+      (s) => s.fecha === fechaBuscada && s.cupos >= (personas || 1)
     );
     if (i !== -1) elegirSalida(i);
   }

@@ -96,16 +96,16 @@ function mostrarProximos() {
       const exp = EXPERIENCIAS.find((e) => e.id === reserva.experienciaId);
       if (!exp) return "";
       return `
-      <li class="viaje">
+      <li class="experiencia">
         <img src="img/${exp.imagen}" alt="${exp.alt}" />
-        <div class="viaje__info">
-          <h2 class="viaje__titulo">${exp.titulo}</h2>
+        <div class="experiencia__info">
+          <h2 class="experiencia__titulo">${exp.titulo}</h2>
           <p>${textoFechaHs(reserva)}</p>
           <p>${reserva.personas} ${reserva.personas === 1 ? "persona" : "personas"}</p>
           <p>Código de reserva: ${reserva.codigo}</p>
-          <span class="viaje__estado">Confirmada</span>
+          <span class="experiencia__estado">Confirmada</span>
         </div>
-                <div class="viaje__acciones">
+                <div class="experiencia__acciones">
           <a class="boton boton--secundario boton--chico" href="detalle.html?id=${exp.id}"
              aria-label="Ver detalle de ${exp.titulo}">Ver detalle</a>
           <button type="button" class="boton boton--peligro boton--chico"

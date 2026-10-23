@@ -1863,7 +1863,7 @@ main {
   list-style: none;
 }
 
-.viaje {
+.experiencia {
   display: flex;
   align-items: center;
   gap: var(--esp-3);
@@ -1872,7 +1872,7 @@ main {
   border-radius: var(--radio-l);
 }
 
-.viaje img {
+.experiencia img {
   flex-shrink: 0;
   width: 160px;
   height: 120px;
@@ -1880,7 +1880,7 @@ main {
   object-fit: cover;
 }
 
-.viaje__info {
+.experiencia__info {
   flex: 1;
   min-width: 0;
   display: flex;
@@ -1888,17 +1888,17 @@ main {
   gap: var(--esp-1);
 }
 
-.viaje__info p {
+.experiencia__info p {
   margin: 0;
   font: var(--texto-small);
 }
 
-.viaje__titulo {
+.experiencia__titulo {
   margin: 0;
   font: var(--texto-h5);
 }
 
-.viaje__estado {
+.experiencia__estado {
   align-self: flex-start;
   padding: 2px var(--esp-2);
   border-radius: 999px;
@@ -1907,14 +1907,14 @@ main {
   font: var(--texto-meta);
 }
 
-.viaje__acciones {
+.experiencia__acciones {
   display: flex;
   flex-direction: column;
   gap: var(--esp-2);
   width: 140px;
 }
 
-.viaje__acciones .boton {
+.experiencia__acciones .boton {
   width: 100%;
   justify-content: center;
   text-align: center;
