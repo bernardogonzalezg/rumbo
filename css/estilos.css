@@ -10,6 +10,11 @@
    4. BOTÓN
    5. CARD DE EXPERIENCIA
    6. HOME: hero, buscador, carrusel y promociones
+   7. EXPLORAR: filtros y resultados
+   8. DETALLE: ficha, galería, reserva fija, salidas y opiniones
+   9. RESERVA: formulario, resumen y modales
+   10. CUENTA: pestañas, viajes, preferencias y notificaciones
+   11. RESPONSIVE: mobile (menos de 768 px)
    ============================================================= */
 
 /* =============================================================
@@ -299,8 +304,8 @@ main {
 }
 
 .footer__legal {
-  margin-top: var(--esp-5); /* 32 */
-  padding-top: var(--esp-5); /* 32 */
+  margin-top: var(--esp-5);
+  padding-top: var(--esp-5);
   border-top: 1px solid var(--color-primary-1);
   font: var(--texto-meta);
 }
@@ -473,7 +478,7 @@ main {
 
 .hero {
   min-height: 480px;
-  padding-top: 130px; /* medidas del Figma (frame de 1440 × 480) */
+  padding-top: 130px;
   padding-bottom: 58px;
   color: var(--blanco);
   display: flex;
@@ -499,7 +504,6 @@ main {
   font: var(--texto-h3);
 }
 
-/* Foco blanco: el hero es una foto oscurecida */
 .hero :focus-visible {
   outline-color: var(--blanco);
 }
@@ -595,7 +599,6 @@ main {
   margin: 0;
 }
 
-/* El hero pone el foco en blanco; acá el fondo es blanco */
 .calendario :focus-visible {
   outline-color: var(--color-acento);
 }
@@ -639,7 +642,6 @@ main {
   text-align: center;
 }
 
-/* Mes: 252 de ancho = 7 columnas de 36; gap 2 entre filas */
 .calendario__mes {
   display: flex;
   flex-direction: column;
@@ -691,6 +693,7 @@ main {
   background: var(--color-primary);
   color: var(--blanco);
 }
+
 /* ----- Secciones ----- */
 
 .seccion {
@@ -744,7 +747,7 @@ main {
 }
 
 .carrusel--arrastrando {
-  scroll-snap-type: none; /* sin snap mientras se arrastra, si no pelea con el gesto */
+  scroll-snap-type: none;
   cursor: grabbing;
   user-select: none;
 }
@@ -797,13 +800,13 @@ main {
   left: var(--esp-2);
   display: grid;
   place-items: center;
-  min-width: 64px; /* 64 de ancho como piso, crece si el texto lo necesita */
+  min-width: 64px;
   height: 32px;
-  padding-inline: var(--esp-2); /* 8: aire a los costados */
+  padding-inline: var(--esp-2);
   border-radius: var(--radio-pill);
   background: var(--color-secundary-n3);
   color: var(--texto-principal);
-  font: var(--texto-btn); /* Label/Button */
+  font: var(--texto-btn);
   white-space: nowrap; /* no se parte en dos líneas */
 }
 
@@ -813,13 +816,15 @@ main {
   font: var(--texto-h4);
 }
 
-/* ===== 7. EXPLORAR ===== */
+/* =============================================================
+   7. EXPLORAR: filtros y resultados
+   ============================================================= */
 
 .explorar {
   display: flex;
   flex-direction: column;
-  gap: var(--esp-5); /* 32 */
-  padding-block: var(--esp-5) var(--esp-6); /* 32 arriba, 64 abajo */
+  gap: var(--esp-5);
+  padding-block: var(--esp-5) var(--esp-6);
 }
 
 .explorar__titulo {
@@ -875,7 +880,7 @@ main {
 .filtros fieldset {
   display: flex;
   flex-direction: column;
-  gap: var(--esp-2); /* 8 entre opciones */
+  gap: var(--esp-2);
   min-width: 0;
   margin: 0;
   padding: 0;
@@ -941,7 +946,490 @@ main {
   align-content: flex-start;
 }
 
-/* ===== 9. RESERVA ===== */
+/* =============================================================
+   8. DETALLE: ficha, galería, reserva fija, salidas y opiniones
+   ============================================================= */
+
+.detalle {
+  padding-bottom: 0; /* pisa el main { padding-bottom } de la Home */
+}
+
+/* --- Contenido: migas, título, ubicación y datos --- */
+
+.detalle__contenido {
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-5);
+  padding-block: var(--esp-5);
+}
+
+.detalle__encabezado {
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-3);
+  padding-block: 10px;
+}
+
+.detalle__titulo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.migas ol {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font: var(--texto-body);
+}
+
+.migas li + li::before {
+  content: "·";
+  margin-inline: var(--esp-2);
+}
+
+.migas a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.migas a:hover {
+  text-decoration: underline;
+}
+
+.detalle__ubicacion {
+  font: var(--texto-small);
+}
+
+.detalle__ubicacion svg {
+  width: 14px;
+  height: 14px;
+  vertical-align: -2px;
+  color: var(--color-secundary-n1);
+}
+
+.detalle__ubicacion svg,
+.detalle__ubicacion svg path {
+  fill: currentColor;
+}
+
+.detalle__favorito {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  background: none;
+  color: var(--texto-principal);
+  cursor: pointer;
+}
+
+.detalle__favorito svg {
+  width: 28px;
+  height: 28px;
+  fill: none;
+  stroke: currentColor;
+}
+
+.detalle__favorito[aria-pressed="true"] {
+  color: var(--favorito);
+}
+
+.detalle__favorito[aria-pressed="true"] svg {
+  fill: currentColor;
+}
+
+.detalle__datos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--esp-5);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font: var(--texto-small);
+}
+
+.detalle__datos li {
+  display: flex;
+  align-items: center;
+  gap: var(--esp-2);
+}
+
+.detalle__datos svg {
+  width: 20px;
+  height: 20px;
+  color: var(--color-primary);
+}
+
+/* --- Galería: 380 de alto. Foto grande (636) y cuatro chicas (314 × 186) --- */
+
+.detalle__galeria {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: minmax(0, 1fr);
+  gap: var(--esp-2);
+  height: 405px; 
+  padding-block: 10px;
+}
+
+.detalle__galeria img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radio-l);
+}
+
+.galeria__secundarias {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: var(--esp-2);
+  min-height: 0;
+}
+
+/* --- Columnas: información (izquierda) y reserva (derecha) --- */
+
+.detalle__columnas {
+  display: flex;
+  gap: var(--esp-6);
+  padding-top: var(--esp-5); 
+  padding-bottom: var(--esp-6);
+}
+
+.detalle__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-5);
+  flex: 0 0 820px;
+  min-width: 0;
+}
+
+.detalle__reserva {
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-3);
+  flex: 1;
+  min-width: 0;
+  align-self: flex-start; /* sin esto se estira y el sticky no funciona */
+  position: sticky; /* queda fija al scrollear: borrá estas dos líneas si no la querés */
+  top: var(--esp-4);
+  padding: var(--esp-4);
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-l);
+}
+
+.reserva__precio {
+  margin: 0;
+  font: var(--texto-body);
+}
+
+.reserva__precio strong {
+  font: var(--texto-h3);
+}
+
+.reserva__campos {
+  display: flex;
+  gap: var(--esp-3);
+}
+
+.reserva__campo {
+  flex: 1;
+  min-width: 0;
+}
+
+.reserva__campo input {
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  padding: 0 var(--esp-3);
+  border: 1px solid var(--borde-input);
+  border-radius: var(--radio-m);
+  font: var(--texto-input);
+  text-align: center;
+}
+
+.reserva__campo input::placeholder {
+  color: var(--texto-secundario);
+  opacity: 1;
+}
+
+.detalle__reserva .boton {
+  width: 100%;
+  height: 44px;
+  padding-block: 0;
+}
+
+.reserva__guardar {
+  gap: var(--esp-2);
+}
+
+.reserva__guardar svg {
+  width: 20px;
+  height: 20px;
+  color: var(--favorito);
+  fill: none;
+  stroke: currentColor;
+}
+
+.reserva__guardar[aria-pressed="true"] svg {
+  fill: currentColor;
+}
+
+.reserva__aviso {
+  margin: 0;
+  font: var(--texto-inputcap);
+  color: var(--texto-secundario);
+}
+
+/* Texto solo para lectores de pantalla (las etiquetas de los inputs) */
+.solo-lectores {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.detalle__seccion {
+  display: flex;
+  flex-direction: column;
+  padding-top: 16px;
+  gap: var(--esp-3); 
+}
+
+/* Línea divisoria arriba de cada sección menos la primera:
+   48 de espacio arriba (el gap) + línea + 48 de padding abajo */
+.detalle__seccion + .detalle__seccion {
+  padding-top: var(--esp-6);
+  border-top: 1px solid var(--borde);
+}
+
+.detalle__seccion h2 {
+  font: var(--texto-h3);
+}
+
+.detalle__seccion p,
+.detalle__lista {
+  font: var(--texto-body);
+}
+
+.detalle__lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-2);
+  margin: 0;
+  padding-left: var(--esp-4);
+}
+
+.detalle__mapa {
+  width: 100%;
+  height: 400px;
+  border: 0;
+  border-radius: var(--radio-l);
+}
+
+.detalle__mapa img {
+  display: block;
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: var(--radio-l);
+}
+
+.detalle__mapa figcaption {
+  margin-top: var(--esp-1);
+  font: var(--texto-meta);
+  color: var(--texto-secundario);
+}
+
+/* --- Secciones amplias: Próximas salidas y Opiniones --- */
+
+.detalle__seccion--amplia {
+  gap: var(--esp-5); /* 32 entre cabecera y contenido */
+  padding-inline: 10px;
+}
+
+.detalle__cabecera {
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-3); /* 16, a confirmar en Figma */
+}
+
+.detalle__nota {
+  margin: 0;
+  font: var(--texto-body);
+  color: var(--texto-secundario);
+}
+
+/* --- Botón secundario (contorno verde) --- */
+
+.boton--secundario {
+  background: var(--blanco);
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+.boton--secundario:hover {
+  background: var(--color-secundary-3);
+}
+
+.boton--secundario:focus-visible {
+  outline: 2px solid var(--color-acento); 
+  outline-offset: 2px;
+}
+
+.boton--secundario:disabled {
+  background: var(--fondo-disabled);
+  border-color: transparent;
+  color: var(--texto-secundario);
+  cursor: not-allowed;
+}
+
+.boton--chico {
+  padding: 12px var(--esp-4);
+}
+
+/* --- Próximas salidas --- */
+
+.salidas {
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-5);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.salida {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--esp-4);
+  padding: var(--esp-3);
+  border: 1px solid var(--borde-input);
+  border-radius: var(--radio-l);
+}
+
+.salida > div {
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-1);
+  padding: 10px;
+}
+
+.salida p {
+  margin: 0;
+}
+
+.salida__fecha {
+  font: var(--texto-body);
+}
+
+.salida__cupos {
+  font: var(--texto-small);
+  color: var(--texto-secundario);
+}
+
+.salida .boton {
+  min-width: 201px;
+}
+
+/* --- Opiniones --- */
+
+.opiniones {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 378px));
+  gap: var(--esp-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.opinion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-2);
+}
+
+.opinion__valoracion {
+  font: var(--texto-meta);
+  line-height: 20px; 
+  color: var(--texto-secundario);
+}
+
+.opinion p {
+  margin: 0;
+}
+
+.opinion__autor {
+  display: flex;
+  align-items: center;
+  gap: var(--esp-2);
+}
+
+.opinion__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.opinion__nombre {
+  font: var(--texto-body);
+}
+
+.opinion__origen {
+  font: var(--texto-meta);
+  color: var(--texto-secundario);
+}
+
+.estrellas {
+  color: var(--color-primary);
+}
+
+.opinion__texto {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3; /* versión estándar, para compatibilidad */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font: var(--texto-body);
+}
+
+.opiniones__mas {
+  align-self: flex-start;
+}
+
+.salida--elegida {
+  border-color: var(--color-primary);
+  box-shadow: inset 0 0 0 1px var(--color-primary);
+}
+
+.reserva__campo input[readonly] {
+  cursor: pointer;
+}
+
+.reserva__error {
+  margin: 0;
+  padding-left: var(--esp-2);
+  border-left: 3px solid var(--favorito);
+  font: var(--texto-inputcap);
+  color: var(--texto-principal);
+}
+
+.detalle__vacio {
+  padding-block: var(--esp-6);
+}
+
+/* =============================================================
+   9. RESERVA: formulario, resumen y modales
+   ============================================================= */
 
 .pagina-reserva {
   padding-bottom: 0; /* pisa el main { padding-bottom } de la Home */
@@ -949,10 +1437,6 @@ main {
 
 .pagina-reserva__encabezado {
   padding-block: var(--esp-5); /* 32 + título de 44 + 32 = 108 */
-}
-
-.pagina-reserva__encabezado h1 {
-  font: var(--texto-h1);
 }
 
 .pagina-reserva__columnas {
@@ -979,10 +1463,6 @@ main {
   border-radius: var(--radio-l);
 }
 
-.formulario h2 {
-  font: var(--texto-h2);
-}
-
 .formulario__fila {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -992,11 +1472,11 @@ main {
 .campo {
   display: flex;
   flex-direction: column;
-  gap: var(--esp-1); /* 4 */
+  gap: var(--esp-1);
 }
 
 .campo label {
-  font: var(--texto-btn); /* Label/Button */
+  font: var(--texto-btn);
 }
 
 .campo input {
@@ -1010,7 +1490,7 @@ main {
 }
 
 .campo input::placeholder {
-  font: var(--texto-inputcap); /* Label/Input-Caption */
+  font: var(--texto-inputcap); 
   color: var(--texto-secundario);
   opacity: 1;
 }
@@ -1219,7 +1699,7 @@ main {
 }
 
 .modal__check svg {
-  width: 32px; /* estimado: ajustar con Figma */
+  width: 32px; 
   height: 32px;
 }
 
@@ -1241,7 +1721,7 @@ main {
 }
 
 .modal__detalle {
-  font: var(--texto-h5); /* la línea en negrita: título · fecha · personas */
+  font: var(--texto-h5); 
 }
 
 .modal .boton {
@@ -1267,7 +1747,9 @@ main {
   outline-offset: 2px;
 }
 
-/* ===== 10. CUENTA ===== */
+/* =============================================================
+   10. CUENTA: pestañas, viajes, preferencias y notificaciones
+   ============================================================= */
 
 .cuenta {
   padding-bottom: 0;
@@ -1389,7 +1871,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: var(--esp-2);
-  width: 140px; /* estimado: ajustar con la medida de Figma */
+  width: 140px; 
 }
 
 .viaje__acciones .boton {
@@ -1414,13 +1896,13 @@ main {
 }
 
 .pregunta legend {
-  margin-bottom: var(--esp-2); /* 8 */
+  margin-bottom: var(--esp-2); 
   padding: 0;
   font: var(--texto-h4);
 }
 
 .pregunta__ayuda {
-  margin: 0 0 var(--esp-2); /* 8 */
+  margin: 0 0 var(--esp-2); 
   font: var(--texto-small);
   color: var(--texto-secundario);
 }
@@ -1428,7 +1910,7 @@ main {
 .chips {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--esp-2); /* 8 */
+  gap: var(--esp-2); 
 }
 
 .chip {
@@ -1488,7 +1970,7 @@ main {
 .preferencias__acciones {
   display: flex;
   align-items: center;
-  gap: var(--esp-5); /* ~32, medido sobre el Figma */
+  gap: var(--esp-5); 
 }
 
 .guardado {
@@ -1599,493 +2081,8 @@ main {
   color: var(--texto-secundario);
 }
 
-
-  /* ===== 8. DETALLE ===== */
-  /* El bloque mobile pasa a ser la sección 9 y sigue al final */
-
-  .detalle {
-    padding-bottom: 0; /* pisa el main { padding-bottom } de la Home */
-  }
-
-  /* --- Contenido: migas, título, ubicación y datos --- */
-
-  .detalle__contenido {
-    display: flex;
-    flex-direction: column;
-    gap: var(--esp-5); /* 32 */
-    padding-block: var(--esp-5);
-  }
-
-  .detalle__encabezado {
-    display: flex;
-    flex-direction: column;
-    gap: var(--esp-3); /* 16 entre migas, título y ubicación */
-    padding-block: 10px;
-  }
-
-  .detalle__titulo {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
-
-  .migas ol {
-    display: flex;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    font: var(--texto-body);
-  }
-
-  .migas li + li::before {
-    content: "·";
-    margin-inline: var(--esp-2);
-  }
-
-  .migas a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  .migas a:hover {
-    text-decoration: underline;
-  }
-
-  .detalle__titulo h1 {
-    font: var(--texto-h1);
-  }
-
-  .detalle__ubicacion {
-    font: var(--texto-small);
-  }
-
-  .detalle__ubicacion svg {
-    width: 14px;
-    height: 14px;
-    vertical-align: -2px;
-    color: var(--color-secundary-n1);
-  }
-
-  .detalle__ubicacion svg,
-  .detalle__ubicacion svg path {
-    fill: currentColor;
-  }
-
-  .detalle__favorito {
-    display: grid;
-    place-items: center;
-    width: 32px;
-    height: 32px;
-    border: 0;
-    background: none;
-    color: var(--texto-principal);
-    cursor: pointer;
-  }
-
-  .detalle__favorito svg {
-    width: 28px;
-    height: 28px;
-    fill: none;
-    stroke: currentColor;
-  }
-
-  .detalle__favorito[aria-pressed="true"] {
-    color: var(--favorito);
-  }
-
-  .detalle__favorito[aria-pressed="true"] svg {
-    fill: currentColor;
-  }
-
-  .detalle__datos {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--esp-5);
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    font: var(--texto-small);
-  }
-
-  .detalle__datos li {
-    display: flex;
-    align-items: center;
-    gap: var(--esp-2);
-  }
-
-  .detalle__datos svg {
-    width: 20px;
-    height: 20px;
-    color: var(--color-primary);
-  }
-
-  /* --- Galería: 380 de alto. Foto grande (636) y cuatro chicas (314 × 186) --- */
-
-  .detalle__galeria {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-rows: minmax(0, 1fr);
-    gap: var(--esp-2);
-    height: 405px; /* 385 de fotos + 10 de padding arriba y abajo */
-    padding-block: 10px;
-  }
-
-  .detalle__galeria img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: var(--radio-l);
-  }
-
-  .galeria__secundarias {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-rows: repeat(2, minmax(0, 1fr));
-    gap: var(--esp-2);
-    min-height: 0;
-  }
-
-  /* --- Columnas: información (izquierda) y reserva (derecha) --- */
-
-  .detalle__columnas {
-    display: flex;
-    gap: var(--esp-6);
-    padding-top: var(--esp-5); /* 32 de respiro debajo de la galería */
-    padding-bottom: var(--esp-6); /* 64 */
-  }
-
-  .detalle__info {
-    display: flex;
-    flex-direction: column;
-    gap: var(--esp-5);
-    flex: 0 0 820px;
-    min-width: 0;
-  }
-
-  .detalle__reserva {
-    display: flex;
-    flex-direction: column;
-    gap: var(--esp-3);
-    flex: 1;
-    min-width: 0;
-    align-self: flex-start; /* sin esto se estira y el sticky no funciona */
-    position: sticky; /* queda fija al scrollear: borrá estas dos líneas si no la querés */
-    top: var(--esp-4);
-    padding: var(--esp-4);
-    background: var(--blanco);
-    border: 1px solid var(--borde);
-    border-radius: var(--radio-l);
-  }
-
-  .reserva__precio {
-    margin: 0;
-    font: var(--texto-body);
-  }
-
-  .reserva__precio strong {
-    font: var(--texto-h3);
-  }
-
-  .reserva__campos {
-    display: flex;
-    gap: var(--esp-3);
-  }
-
-  .reserva__campo {
-    flex: 1;
-    min-width: 0;
-  }
-
-  .reserva__campo input {
-    width: 100%;
-    min-width: 0;
-    min-height: 44px;
-    padding: 0 var(--esp-3);
-    border: 1px solid var(--borde-input);
-    border-radius: var(--radio-m);
-    font: var(--texto-input);
-    text-align: center;
-  }
-
-  .reserva__campo input::placeholder {
-    color: var(--texto-secundario);
-    opacity: 1;
-  }
-
-  .detalle__reserva .boton {
-    width: 100%;
-    height: 44px;
-    padding-block: 0;
-  }
-
-  .reserva__guardar {
-    gap: var(--esp-2);
-  }
-
-  .reserva__guardar svg {
-    width: 20px;
-    height: 20px;
-    color: var(--favorito);
-    fill: none;
-    stroke: currentColor;
-  }
-
-  .reserva__guardar[aria-pressed="true"] svg {
-    fill: currentColor;
-  }
-
-  .reserva__aviso {
-    margin: 0;
-    font: var(--texto-inputcap);
-    color: var(--texto-secundario);
-  }
-
-  /* Texto solo para lectores de pantalla (las etiquetas de los inputs) */
-  .solo-lectores {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-    white-space: nowrap;
-    border: 0;
-  }
-
-  .detalle__seccion {
-    display: flex;
-    flex-direction: column;
-    padding-top: 16px;
-    gap: var(--esp-3); /* 16 entre título y contenido */
-  }
-
-  /* Línea divisoria arriba de cada sección menos la primera:
-   48 de espacio arriba (el gap) + línea + 48 de padding abajo */
-  .detalle__seccion + .detalle__seccion {
-    padding-top: var(--esp-6);
-    border-top: 1px solid var(--borde);
-  }
-
-  .detalle__seccion h2 {
-    font: var(--texto-h3);
-  }
-
-  .detalle__seccion p,
-  .detalle__lista {
-    font: var(--texto-body);
-  }
-
-  .detalle__lista {
-    display: flex;
-    flex-direction: column;
-    gap: var(--esp-2);
-    margin: 0;
-    padding-left: var(--esp-4);
-  }
-
-  .detalle__mapa {
-    width: 100%;
-    height: 400px;
-    border: 0;
-    border-radius: var(--radio-l);
-  }
-
-  .detalle__mapa img {
-    display: block;
-    width: 100%;
-    height: 280px;
-    object-fit: cover;
-    border-radius: var(--radio-l);
-  }
-
-  .detalle__mapa figcaption {
-    margin-top: var(--esp-1);
-    font: var(--texto-meta);
-    color: var(--texto-secundario);
-  }
-
-  /* --- Secciones amplias: Próximas salidas y Opiniones --- */
-
-  .detalle__seccion--amplia {
-    gap: var(--esp-5); /* 32 entre cabecera y contenido */
-    padding-inline: 10px;
-  }
-
-  .detalle__cabecera {
-    display: flex;
-    flex-direction: column;
-    gap: var(--esp-3); /* 16, a confirmar en Figma */
-  }
-
-  .detalle__nota {
-    margin: 0;
-    font: var(--texto-body);
-    color: var(--texto-secundario);
-  }
-
-  /* --- Botón secundario (contorno verde) --- */
-
-  .boton--secundario {
-    background: var(--blanco);
-    border: 1px solid var(--color-primary);
-    color: var(--color-primary);
-  }
-
-  .boton--secundario:hover {
-    background: var(--color-secundary-3);
-  }
-
-  .boton--secundario:focus-visible {
-    outline: 2px solid var(--color-acento); /* el foco blanco del .boton no se vería sobre fondo blanco */
-    outline-offset: 2px;
-  }
-
-  .boton--secundario:disabled {
-    background: var(--fondo-disabled);
-    border-color: transparent;
-    color: var(--texto-secundario);
-    cursor: not-allowed;
-  }
-
-  .boton--chico {
-    padding: 12px var(--esp-4);
-  }
-
-  /* --- Próximas salidas --- */
-
-  .salidas {
-    display: flex;
-    flex-direction: column;
-    gap: var(--esp-5);
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  .salida {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: var(--esp-4);
-    padding: var(--esp-3);
-    border: 1px solid var(--borde-input);
-    border-radius: var(--radio-l);
-  }
-
-  .salida > div {
-    /* bloque de texto: gap 4, padding 10 */
-    display: flex;
-    flex-direction: column;
-    gap: var(--esp-1);
-    padding: 10px;
-  }
-
-  .salida p {
-    margin: 0;
-  }
-
-  .salida__fecha {
-    font: var(--texto-body);
-  }
-
-  .salida__cupos {
-    font: var(--texto-small);
-    color: var(--texto-secundario);
-  }
-
-  .salida .boton {
-    min-width: 201px;
-  }
-
-  /* --- Opiniones --- */
-
-  .opiniones {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 378px));
-    gap: var(--esp-4);
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  .opinion {
-    display: flex;
-    flex-direction: column;
-    gap: var(--esp-2);
-  }
-
-  .opinion__valoracion {
-    font: var(--texto-meta);
-    line-height: 20px; /* con esto la reseña mide 148 */
-    color: var(--texto-secundario);
-  }
-
-  .opinion p {
-    margin: 0;
-  }
-
-  .opinion__autor {
-    display: flex;
-    align-items: center;
-    gap: var(--esp-2);
-  }
-
-  .opinion__avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-
-  .opinion__nombre {
-    font: var(--texto-body);
-  }
-
-  .opinion__origen {
-    font: var(--texto-meta);
-    color: var(--texto-secundario);
-  }
-
-  .estrellas {
-    color: var(--color-primary);
-  }
-
-  .opinion__texto {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    line-clamp: 3; /* versión estándar, para compatibilidad */
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    font: var(--texto-body);
-  }
-
-  .opiniones__mas {
-    align-self: flex-start;
-  }
-
-  .salida--elegida {
-    border-color: var(--color-primary);
-    box-shadow: inset 0 0 0 1px var(--color-primary);
-  }
-
-  .reserva__campo input[readonly] {
-    cursor: pointer;
-  }
-
-  .reserva__error {
-    margin: 0;
-    padding-left: var(--esp-2);
-    border-left: 3px solid var(--favorito);
-    font: var(--texto-inputcap);
-    color: var(--texto-principal);
-  }
-
-  .detalle__vacio {
-    padding-block: var(--esp-6);
-  }
 /* =============================================================
-   7. RESPONSIVE: mobile (menos de 768 px, frame de Figma de 390)
+   11. RESPONSIVE: mobile (menos de 768 px, frame de Figma de 390)
    ============================================================= */
 
 @media (max-width: 767px) {
@@ -2103,8 +2100,6 @@ main {
   }
 
   .header__usuario {
-    display: grid;
-    place-items: center;
     width: 24px;
     height: 24px;
   }
@@ -2122,7 +2117,6 @@ main {
 
   .menu-cuenta {
     width: 200px;
-    padding: var(--esp-2); /* 8 */
   }
 
   .menu-cuenta a {
@@ -2132,13 +2126,10 @@ main {
   }
 
   .menu-cuenta__separador {
-    margin: var(--esp-1) var(--esp-2); /* 4 arriba/abajo, 8 a los lados */
+    margin: var(--esp-1) var(--esp-2);
   }
 
   .hero {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     gap: var(--esp-3);
     min-height: 450px;
     padding-block: var(--esp-4);
@@ -2217,12 +2208,10 @@ main {
   }
 
   .footer__logo {
-    font: var(--texto-h4);
     margin-bottom: var(--esp-1);
   }
 
   .footer__descripcion {
-    font: var(--texto-small);
     max-width: none;
   }
 
