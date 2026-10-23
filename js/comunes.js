@@ -29,5 +29,18 @@ if (botonCuenta && menuCuenta) {
   // Escape: cerrar y volver al botón
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && !menuCuenta.hidden) cerrar(true);
+  });  
+  
+  menuCuenta.addEventListener("click", (e) => {
+    if (e.target.closest("a")) cerrar();
   });
 }
+
+
+
+// El campo de personas solo acepta números
+  document.querySelectorAll('input[name="personas"]').forEach((campo) => {
+    campo.addEventListener("input", () => {
+    campo.value = campo.value.replace(/\D/g, "");
+  });
+});

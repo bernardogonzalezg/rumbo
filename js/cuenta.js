@@ -43,7 +43,7 @@ botonesPestana.forEach((boton, i) => {
 
 window.addEventListener("hashchange", () => mostrarPestana(pestanaDeLaUrl()));
 
-/* ---------- Viajes guardados ---------- */
+/* ---------- Experiencias guardadas ---------- */
 
 function mostrarGuardados() {
   const contenedor = document.getElementById("guardados");
@@ -53,7 +53,7 @@ function mostrarGuardados() {
 
   contenedor.innerHTML = guardadas.length
     ? guardadas.map(crearCard).join("")
-    : `<p class="cuenta__vacio">Todavía no guardaste ningún viaje.
+    : `<p class="cuenta__vacio">Tocá el corazón en las experiencias que te interesen y las vas a encontrar acá.
          <a href="explorar.html">Explorar experiencias</a></p>`;
 }
 
@@ -63,7 +63,7 @@ document.addEventListener("click", (evento) => {
   if (evento.target.closest("#guardados .card__favorito")) mostrarGuardados();
 });
 
-/* ---------- Próximos viajes ---------- */
+/* ---------- Reservas guardadas ---------- */
 
 // "Sábado 17 de octubre 9 hs" / "Sábado 17 de octubre 9:30 hs"
 function textoFechaHs(reserva) {
@@ -86,7 +86,7 @@ function mostrarProximos() {
   const reservas = leerReservas().reverse(); // la más nueva primero
 
   if (reservas.length === 0) {
-    lista.innerHTML = `<li class="cuenta__vacio">Todavía no tenés viajes reservados.
+    lista.innerHTML = `<li class="cuenta__vacio">Cuando confirmes una experiencia, aparece acá con su información.
       <a href="explorar.html">Explorar experiencias</a></li>`;
     return;
   }

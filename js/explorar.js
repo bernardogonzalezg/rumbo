@@ -4,19 +4,27 @@ const selectOrden = document.getElementById("orden");
 const resumen = document.getElementById("resumen");
 const titulo = document.querySelector(".explorar__titulo h1");
 
+
+
 // Datos que llegan desde la Home por la URL: explorar.html?destino=Tandil
 const params = new URLSearchParams(location.search);
 const destino = params.get("destino");
 const fecha = /^\d{4}-\d{2}-\d{2}$/.test(params.get("fecha"))
   ? params.get("fecha")
   : null;
-const viajeros = Number.parseInt(params.get("viajeros"), 10) || null;
+const personas = Number.parseInt(params.get("personas"), 10) || null;
+
 const contexto = [
   fecha && `&fecha=${fecha}`,
-  viajeros && `&viajeros=${viajeros}`,
+  personas && `&personas=${personas}`,
 ]
   .filter(Boolean)
   .join("");
+
+
+const buscador = document.querySelector(".buscador");
+buscador.elements.destino.value = destino || "";
+buscador.elements.personas.value = personas || "";
 
 titulo.textContent = destino ? `Experiencias en ${destino}` : "Experiencias";
 
@@ -56,7 +64,7 @@ function filtrar() {
       (!destino || exp.lugar.toLowerCase().includes(destino.toLowerCase())) &&
       (!fecha ||
         exp.salidas.some(
-          (s) => s.fecha === fecha && s.cupos >= (viajeros || 1),
+          (s) => s.fecha === fecha && s.cupos >= (personas || 1),
         )) &&
       exp.precio >= min &&
       exp.precio <= max &&
@@ -78,7 +86,7 @@ function pintar() {
   resumen.textContent = [
     cantidad,
     fecha ? textoFechaCorta(fecha) : null,
-    viajeros ? `${viajeros} ${viajeros === 1 ? "persona" : "personas"}` : null,
+    personas ? `${personas} ${personas === 1 ? "persona" : "personas"}` : null,
   ]
     .filter(Boolean)
     .join(" · ");

@@ -13,7 +13,7 @@
    7. EXPLORAR: filtros y resultados
    8. DETALLE: ficha, galería, reserva fija, salidas y opiniones
    9. RESERVA: formulario, resumen y modales
-   10. CUENTA: pestañas, viajes, preferencias y notificaciones
+   10. CUENTA: pestañas, experiencias, preferencias y notificaciones
    11. RESPONSIVE: mobile (menos de 768 px)
    ============================================================= */
 
@@ -43,6 +43,10 @@ img {
   display: block;
 }
 
+html {
+  scrollbar-gutter: stable;
+}
+
 /* ===== Texto base ===== */
 
 body {
@@ -52,6 +56,13 @@ body {
   font-weight: var(--body-peso);
   color: var(--texto-principal);
   background: var(--blanco);
+
+  /* Footer siempre abajo, aunque la página sea corta */
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+
 }
 
 h1,
@@ -89,6 +100,7 @@ h5 {
 }
 
 main {
+  flex: 1;
   padding-bottom: var(--esp-6);
 }
 
@@ -1776,7 +1788,7 @@ main {
 }
 
 /* =============================================================
-   10. CUENTA: pestañas, viajes, preferencias y notificaciones
+   10. CUENTA: pestañas, experiencias, preferencias y notificaciones
    ============================================================= */
 
 .cuenta {
@@ -1823,7 +1835,7 @@ main {
   color: var(--color-primary);
 }
 
-/* --- Viajes guardados: 5 columnas de 220 con gap 45 = 1280 --- */
+/* --- Experiencias guardadas: 5 columnas de 220 con gap 45 = 1280 --- */
 
 .cuenta__grilla {
   display: grid;
@@ -1840,7 +1852,7 @@ main {
   font: var(--texto-body);
 }
 
-/* --- Próximos viajes --- */
+/* --- Reservas confirmadas --- */
 
 .cuenta__lista {
   display: flex;

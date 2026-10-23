@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mi cuenta · Rumbo</title>
-    <meta name="description" content="Tu cuenta en Rumbo: viajes guardados, próximos viajes, notificaciones y preferencias." />
+    <meta name="description" content="Tu cuenta en Rumbo: Experiencias guardadas, reservas confirmadas, notificaciones y preferencias." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -43,12 +43,12 @@
             <ul class="menu-cuenta" id="menu-cuenta" hidden>
               <li>
                 <a href="cuenta.html#guardados"
-                  ><span data-icono="guardados"></span>Viajes guardados</a
+                  ><span data-icono="guardados"></span>Experiencias guardadas</a
                 >
               </li>
               <li>
                 <a href="cuenta.html#proximos"
-                  ><span data-icono="proximos"></span>Próximos viajes</a
+                  ><span data-icono="proximos"></span>Rerservas confirmadas</a
                 >
               </li>
               <li>
@@ -93,7 +93,7 @@
             aria-controls="panel-guardados"
             aria-selected="true"
           >
-            Viajes guardados
+            Experiencias guardadas
           </button>
           <button
             type="button"
@@ -104,7 +104,7 @@
             aria-selected="false"
             tabindex="-1"
           >
-            Próximos viajes
+            Rerservas confirmadas
           </button>
           <button
             type="button"
@@ -215,7 +215,7 @@
             </fieldset>
 
             <fieldset class="pregunta" aria-describedby="ayuda-presupuesto">
-              <legend>¿Cuánto querés gastar por persona?</legend>
+              <legend>¿Hasta cuánto querés gastar por persona?</legend>
               <p class="pregunta__ayuda" id="ayuda-presupuesto">
                 Elegí un rango
               </p>
@@ -279,7 +279,7 @@
                 >
                 <p id="notif-confirmacion-desc">
                   Te enviamos un email con los detalles apenas confirmás tu
-                  viaje.
+                  experiencia.
                 </p>
               </div>
               <span class="interruptor">
@@ -298,10 +298,10 @@
             <li class="notificacion">
               <div>
                 <label class="notificacion__titulo" for="notif-recordatorio"
-                  >Recordatorio antes del viaje</label
+                  >Recordatorio antes de la experiencia</label
                 >
                 <p id="notif-recordatorio-desc">
-                  Un aviso el día anterior para que no se te pase la salida.
+                  Un aviso el día anterior para que no se te pase la fecha y hora.
                 </p>
               </div>
               <span class="interruptor">
@@ -320,7 +320,7 @@
             <li class="notificacion">
               <div>
                 <label class="notificacion__titulo" for="notif-guardados"
-                  >Novedades de tus viajes guardados</label
+                  >Novedades de tus experiencias guardadas</label
                 >
                 <p id="notif-guardados-desc">
                   Te avisamos si hay nuevas fechas o cambios en las experiencias

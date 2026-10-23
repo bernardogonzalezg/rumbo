@@ -120,7 +120,7 @@ function confirmarReserva() {
     telefono: document.getElementById("telefono").value.trim(),
   };
 
-  // Se guarda para mostrarla después en Cuenta > Próximos viajes
+  // Se guarda para mostrarla después en Cuenta > Reservas confirmadas
   try {
     const reservas = JSON.parse(localStorage.getItem("rumbo_reservas")) || [];
     reservas.push(reserva);
