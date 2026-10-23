@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Explorar · Rumbo</title>
+    <meta
+      name="description"
+      content="Explorá experiencias y escapadas en Rumbo. Filtrá por precio, duración, tipo y accesibilidad."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -96,6 +100,7 @@
 
       <div class="explorar__fila">
         <form class="filtros" id="filtros" aria-label="Filtros">
+          <h2 class="solo-lectores" id="titulo-filtros">Filtros</h2>
           <fieldset>
             <legend>Precio por persona</legend>
             <div class="filtros__precio">
@@ -166,6 +171,8 @@
 
           <button type="reset" class="filtros__limpiar">Limpiar filtros</button>
         </form>
+
+        <h2 class="solo-lectores" id="titulo-resultados">Resultados</h2>
 
         <section
           class="resultados"

@@ -78,7 +78,7 @@ function pintar() {
   resumen.textContent = [
     cantidad,
     fecha ? textoFechaCorta(fecha) : null,
-    viajeros ? `${viajeros} ${viajeros === 1 ? "viajero" : "viajeros"}` : null,
+    viajeros ? `${viajeros} ${viajeros === 1 ? "persona" : "personas"}` : null,
   ]
     .filter(Boolean)
     .join(" · ");

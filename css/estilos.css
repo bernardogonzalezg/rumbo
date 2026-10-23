@@ -420,6 +420,9 @@ main {
 .card__titulo {
   min-height: 28px;
   font: var(--texto-h5);
+  white-space: nowrap;      
+  overflow: hidden;         
+  text-overflow: ellipsis;
 }
 
 .card__lugar,
