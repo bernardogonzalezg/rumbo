@@ -30,7 +30,7 @@ Autor: González Girodo Bernardo
 | Sitio publicado (GitHub Pages) | https://bernardogonzalezg.github.io/rumbo/ |
 | Prototipo en Figma, modo presentación | https://www.figma.com/proto/oEsvzBeefO1MuVRQlJ11og/Rumbo?node-id=184-2301&t=0OipaQniYQObPmX1-0&scaling=min-zoom&content-scaling=fixed&page-id=11%3A281&starting-point-node-id=111%3A2151 |
 | Diseño en Figma, modo editor | https://www.figma.com/design/oEsvzBeefO1MuVRQlJ11og/Rumbo?node-id=11-281&t=0OipaQniYQObPmX1-1 |
-| Memoria y Bitácora de IA | docs/Bitacora-IA-Rumbo.xlsx |
+| Memoria y Bitácora de IA | [docs/Bitacora_IA_Rumbo.xlsx](docs/Bitacora-7IA-Rumbo.xlsx) |
 
 ---
 
@@ -163,4 +163,4 @@ El trabajo es personal. Se utilizó un asistente de IA (Claude) como apoyo en el
 
 Las decisiones de diseño (paleta, Design System, estructura de las pantallas, componentes y flujo de la experiencia) y el diseño completo en Figma son del autor.
 
-La Bitácora de IA detalla, pieza por pieza, qué se hizo con asistencia, qué aportó la herramienta y qué decidió y modificó el autor: docs/Bitacora_IA_Rumbo.xlsx.
+La [Bitácora de IA](docs/Bitacora_IA_Rumbo.xlsx) detalla, pieza por pieza, qué se hizo con asistencia, qué aportó la herramienta y qué decidió y modificó el autor.
