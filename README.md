@@ -30,7 +30,7 @@ Autor: González Girodo Bernardo
 | Sitio publicado (GitHub Pages) | https://bernardogonzalezg.github.io/rumbo/ |
 | Prototipo en Figma, modo presentación | https://www.figma.com/proto/oEsvzBeefO1MuVRQlJ11og/Rumbo?node-id=184-2301&t=0OipaQniYQObPmX1-0&scaling=min-zoom&content-scaling=fixed&page-id=11%3A281&starting-point-node-id=111%3A2151 |
 | Diseño en Figma, modo editor | https://www.figma.com/design/oEsvzBeefO1MuVRQlJ11og/Rumbo?node-id=11-281&t=0OipaQniYQObPmX1-1 |
-| Memoria y Bitácora de IA | [docs/Bitacora_IA_Rumbo.xlsx](docs/Bitacora-7IA-Rumbo.xlsx) |
+| Memoria y Bitácora de IA | [docs/Bitacora_IA_Rumbo.xlsx](docs/Bitacora-IA-Rumbo.xlsx) |
 
 ---
 
@@ -53,7 +53,7 @@ El proyecto fue probado en **Brave** y **Google Chrome**, en pantallas de 32", 2
 | Página | Archivo | Qué hace |
 |---|---|---|
 | Home | `index.html` | Página principal. Contiene el buscador (destino, fecha con calendario, personas), el carrusel de recomendaciones, el carrusel de experiencias destacadas y el mosaico de promociones de temporada. |
-| Explorar | `explorar.html` | Resultados de búsqueda con filtros principales (precio por persona, duración, tipo, accesibilidad) y orden, tambien buscador compacto. |
+| Explorar | `explorar.html` | Resultados de búsqueda con filtros principales (precio por persona, duración, tipo, accesibilidad) y orden. También buscador compacto. |
 | Detalle | `detalle.html?id=…` | Detalle de la experiencia: información, galería, próximas salidas, opiniones y cuadro de reserva. |
 | Reserva | `reserva.html?id=…&salida=…&personas=…` | Formulario de contacto con validación, resumen y confirmación. |
 | Cuenta | `cuenta.html` | Pestañas: experiencias guardadas, reservas confirmadas (con detalle y opción de cancelación), notificaciones y preferencias de usuario. |
@@ -68,7 +68,7 @@ Home → buscar (destino, fecha, personas) → Explorar → Detalle → Reserva 
 - El campo **Fecha** despliega un calendario donde se muestran los días en los que hay experiencias con lugares disponibles.
 - La fecha y la cantidad de personas elegidas en el buscador **viajan por la URL hasta el Detalle**, donde el cuadro de reserva ya viene completo, para que la persona no tenga que cargar dos veces lo mismo. Igualmente puede modificarlos.
 - El buscador puede dejarse en blanco: al presionar Buscar se abre Explorar con todas las experiencias disponibles.
-- En explorar se encuentra un buscador compacto que permite al usuario modificar su busqueda sin tener que volver al inicio del sitio.
+- En Explorar hay un buscador compacto que permite modificar la búsqueda sin volver al inicio del sitio.
 
 ---
 
@@ -91,7 +91,7 @@ Rumbo/
 │   └── home.js · explorar.js · detalle.js · reserva.js · cuenta.js   Una por página
 ├── data/
 │   └── experiencias.js · promociones.js · opiniones.js   Datos simulados
-├── docs/               Capturas de pantalla
+├── docs/               Capturas de pantalla, Bitácora de IA y evidencias
 └── img/                Imágenes
 ```
 
@@ -128,6 +128,10 @@ El sistema se diseñó en Figma con Design System, componentes, variantes y prot
 - No hay pago ni servidor: la reserva se guarda solo en el navegador de quien la hace.
 - Preferencias y Notificaciones (dentro de Cuenta) son una maqueta visual: los controles se pueden usar, pero no guardan nada.
 - Responsive: la única página que cuenta con diseño mobile es la Home.
+- Tablet: entre 768 y 1023 px el diseño no está resuelto y puede haber desborde horizontal.
+- El selector de idioma del header es decorativo.
+- El calendario del buscador muestra los días con lugares de todas las experiencias, sin filtrar por destino.
+- Se probó en Brave y Chrome; no en Firefox ni Safari.
 
 ---
 
@@ -163,4 +167,4 @@ El trabajo es personal. Se utilizó un asistente de IA (Claude) como apoyo en el
 
 Las decisiones de diseño (paleta, Design System, estructura de las pantallas, componentes y flujo de la experiencia) y el diseño completo en Figma son del autor.
 
-La [Bitácora de IA](docs/Bitacora_IA_Rumbo.xlsx) detalla, pieza por pieza, qué se hizo con asistencia, qué aportó la herramienta y qué decidió y modificó el autor.
+La [Bitácora de IA](docs/Bitacora-IA-Rumbo.xlsx) detalla, pieza por pieza, qué se hizo con asistencia, qué aportó la herramienta y qué decidió y modificó el autor.
