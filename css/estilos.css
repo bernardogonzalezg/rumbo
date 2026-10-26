@@ -200,7 +200,7 @@ main {
   ); /* justo donde termina el header (su padding es --esp-4) */
   right: 0;
   z-index: 10;
-  width: 280px;
+  width: max-content;
   margin: 0;
   padding: var(--esp-2);
   list-style: none;
@@ -224,6 +224,7 @@ main {
   color: var(--texto-principal);
   font: var(--texto-nav);
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .menu-cuenta a:hover {
