@@ -61,9 +61,9 @@ const EXPERIENCIAS = [
       { src: "circuito-chico.jpg", alt: "Lago de montaña rodeado de bosque" },
     ],
     salidas: [
-      { fecha: "2026-10-18", hora: "15:00", cupos: 6 },
-      { fecha: "2026-10-19", hora: "15:00", cupos: 9 },
-      { fecha: "2026-10-20", hora: "15:00", cupos: 7 },
+      { fecha: "2026-10-26", hora: "15:00", cupos: 6 },
+      { fecha: "2026-10-27", hora: "15:00", cupos: 9 },
+      { fecha: "2026-10-28", hora: "15:00", cupos: 7 },
     ],
   },
   {
@@ -94,7 +94,7 @@ const EXPERIENCIAS = [
       { src: "tirolesa.jpg", alt: "Persona cruzando una tirolesa entre las sierras" },
     ],
     salidas: [
-      { fecha: "2026-10-31", hora: "09:30", cupos: 0 },
+      { fecha: "2026-10-26", hora: "09:30", cupos: 0 },
       { fecha: "2026-11-01", hora: "09:30", cupos: 3 },
       { fecha: "2026-11-02", hora: "09:30", cupos: 0 },
     ],
@@ -127,9 +127,9 @@ const EXPERIENCIAS = [
       { src: "city-tour-tandil.jpg", alt: "Vista de la ciudad de Tandil desde un mirador" },
     ],
     salidas: [
-      { fecha: "2026-10-25", hora: "09:00", cupos: 8 },
-      { fecha: "2026-10-26", hora: "09:00", cupos: 11 },
-      { fecha: "2026-10-27", hora: "09:00", cupos: 9 },
+      { fecha: "2026-10-26", hora: "09:00", cupos: 8 },
+      { fecha: "2026-10-27", hora: "09:00", cupos: 11 },
+      { fecha: "2026-10-28", hora: "09:00", cupos: 9 },
     ],
   },
   {
@@ -193,9 +193,9 @@ const EXPERIENCIAS = [
       { src: "cabalgata.jpg", alt: "Personas a caballo por las sierras" },
     ],
     salidas: [
-      { fecha: "2026-10-17", hora: "09:00", cupos: 7 },
-      { fecha: "2026-10-18", hora: "09:00", cupos: 8 },
-      { fecha: "2026-10-19", hora: "09:00", cupos: 0 },
+      { fecha: "2026-10-26", hora: "09:00", cupos: 7 },
+      { fecha: "2026-10-28", hora: "09:00", cupos: 8 },
+      { fecha: "2026-10-30", hora: "09:00", cupos: 0 },
     ],
   },
   {
@@ -259,9 +259,9 @@ const EXPERIENCIAS = [
       { src: "city-tour-tandil.jpg", alt: "Vista de la ciudad de Tandil desde un mirador" },
     ],
     salidas: [
-      { fecha: "2026-11-08", hora: "08:30", cupos: 10 },
-      { fecha: "2026-11-09", hora: "08:30", cupos: 13 },
-      { fecha: "2026-11-10", hora: "08:30", cupos: 11 },
+      { fecha: "2026-11-01", hora: "08:30", cupos: 10 },
+      { fecha: "2026-11-02", hora: "08:30", cupos: 13 },
+      { fecha: "2026-11-03", hora: "08:30", cupos: 11 },
     ],
   },
   {
@@ -292,9 +292,9 @@ const EXPERIENCIAS = [
       { src: "city-tour-tandil.jpg", alt: "Vista de la ciudad de Tandil desde un mirador" },
     ],
     salidas: [
-      { fecha: "2026-11-14", hora: "10:00", cupos: 9 },
-      { fecha: "2026-11-15", hora: "10:00", cupos: 12 },
-      { fecha: "2026-11-16", hora: "10:00", cupos: 0 },
+      { fecha: "2026-10-29", hora: "10:00", cupos: 9 },
+      { fecha: "2026-10-30", hora: "10:00", cupos: 12 },
+      { fecha: "2026-11-02", hora: "10:00", cupos: 0 },
     ],
   },
   {
@@ -358,9 +358,9 @@ const EXPERIENCIAS = [
       { src: "dia-de-spa.jpg", alt: "Sala de masajes con piedras y velas" },
     ],
     salidas: [
-      { fecha: "2026-11-21", hora: "09:00", cupos: 5 },
-      { fecha: "2026-11-22", hora: "09:00", cupos: 8 },
-      { fecha: "2026-11-23", hora: "09:00", cupos: 6 },
+      { fecha: "2026-11-01", hora: "09:00", cupos: 5 },
+      { fecha: "2026-11-02", hora: "09:00", cupos: 8 },
+      { fecha: "2026-11-03", hora: "09:00", cupos: 6 },
     ],
   },
   {
